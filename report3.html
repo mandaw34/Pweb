@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>dvnmanda – Report Detail</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <style>
+
+        .report-detail-hero {
+            padding-top: 130px;
+            padding-bottom: 70px;
+
+            background:
+                linear-gradient(rgba(0,0,0,0.55),
+                rgba(0,0,0,0.55)),
+                linear-gradient(
+                    135deg,
+                    var(--maroon-dark) 0%,
+                    var(--maroon-light) 45%,
+                    #2a1b1b 100%
+                );
+
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .report-content-section {
+            padding-top: 70px;
+            padding-bottom: 100px;
+        }
+
+        .report-wrapper {
+            background-color: var(--maroon-dark);
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        }
+
+        .report-heading {
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--gold);
+            padding-left: 15px;
+        }
+
+        .report-paragraph {
+            color: var(--gold-light);
+            line-height: 2;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .report-list li {
+            color: var(--gold-light);
+            margin-bottom: 12px;
+            line-height: 1.9;
+        }
+
+        .report-subtitle {
+            color: var(--gold);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .report-image-box {
+            margin-top: 30px;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .report-image {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        .report-image-caption {
+            margin-top: 12px;
+            color: var(--gold-light);
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .back-btn {
+            margin-top: 50px;
+        }
+
+        .code-box {
+            background-color: #1a1a1a;
+            border: 1px solid var(--gold);
+            border-radius: 10px;
+            padding: 20px;
+            overflow-x: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .code-box code {
+            color: #f8f8f2;
+            font-family: Consolas, monospace;
+            white-space: pre;
+        }
+
+
+        @media (max-width: 768px) {
+
+            .report-wrapper {
+                padding: 30px 25px;
+            }
+
+        }
+
+       
+    </style>
+</head>
+
+<body class="bg-dark-medieval">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar"
+         data-bs-theme="dark">
+
+        <div class="container">
+
+            <a class="navbar-brand logo-text"
+               href="../index.html">
+
+                DVNMANDA
+
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end"
+                 id="navbarNav">
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="../index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="../about.html">
+                            Profile
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="../portofolio.html">
+                            Gallery
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                           href="../report.html">
+                            Report
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="../kontak.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- HERO -->
+    <section class="report-detail-hero text-center">
+
+        <div class="container">
+
+            <h1 class="display-4 gold-text fw-bold">
+                Laporan Praktikum
+            </h1>
+
+            <p class="lead gold-light-text mt-3">
+            LARAVEL RELATIONSHIP
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CONTENT -->
+    <section class="report-content-section">
+
+        <div class="container">
+
+            <div class="report-wrapper">
+
+                <!-- PENDAHULUAN -->
+                <h2 class="report-heading">
+                    A. Pendahuluan
+                </h2>
+
+                <p class="report-paragraph">
+                    Praktikum kali ini berfokus pada penerapan hubungan antar-tabel (<i>Database Relationship</i>) menggunakan ORM (Object-Relational Mapping) bawaan Laravel yaitu <b>Eloquent</b>. Dalam sistem basis data relasional, sebuah entitas sering kali memiliki keterkaitan dengan entitas lainnya. Laravel memudahkan pengelolaan hubungan ini melalui penulisan kode PHP yang ekspresif di dalam berkas Model.
+                </p>
+
+                <p class="report-paragraph">
+                    Dalam praktikum ini, terdapat tiga entitas utama yang saling berhubungan:
+                </p>
+                <ol class="report-list">
+                    <li><strong>Student (Mahasiswa):</strong> Entitas utama yang merepresentasikan data mahasiswa.</li>
+                    <li><strong>Major (Jurusan):</strong> Entitas yang merepresentasikan data program studi atau jurusan mahasiswa.</li>
+                    <li><strong>Subject (Mata Kuliah):</strong> Entitas yang merepresentasikan data mata kuliah akademik.</li>
+                </ol>
+
+                <p class="report-paragraph">
+                    Jenis relasi yang diterapkan dalam praktikum ini meliputi:
+                </p>
+                <ul class="report-list">
+                    <li><strong>One-to-Many (Major - Student):</strong> Satu jurusan dapat memiliki banyak mahasiswa, sedangkan satu mahasiswa hanya terdaftar pada satu jurusan tertentu (Many-to-One dari sudut pandang mahasiswa).</li>
+                    <li><strong>Many-to-Many (Student - Subject):</strong> Satu mahasiswa dapat mengambil banyak mata kuliah, dan satu mata kuliah dapat diambil oleh banyak mahasiswa sekaligus. Relasi ini dijembatani oleh sebuah tabel perantara (<i>pivot table</i>) bernama <code>student_subject</code>.</li>
+                </ul>
+
+                <!-- TUJUAN -->
+                <h2 class="report-heading mt-5">
+                    B. Tujuan
+                </h2>
+
+                <ol class="report-list">
+                    <li>Memahami konsep dasar relasi database (<i>Relationship</i>) di Laravel.</li>
+                    <li>Mengimplementasikan integrasi tabel dengan <i>Foreign Key</i> pada berkas <i>Migration</i>.</li>
+                    <li>Mengonfigurasi relasi <i>One-to-Many</i> dan <i>Many-to-Many</i> pada Model Eloquent.</li>
+                    <li>Menerapkan teknik <i>Eager Loading</i> untuk mengoptimalkan kinerja query dan mencegah masalah N+1 Query.</li>
+                    <li>Mampu menampilkan data relasi secara dinamis pada berkas <i>Blade View</i>.</li>
+                </ol>
+
+                <!-- LANGKAH KERJA -->
+                <h2 class="report-heading mt-5">
+                    C. Langkah Kerja
+                </h2>
+
+                <!-- STEP 1 -->
+                <h4 class="report-subtitle">
+                    1. Membuat Migration
+                </h4>
+
+                <p class="report-paragraph">
+                    Langkah pertama yaitu membuat file migrasi untuk mendefinisikan skema struktur tabel database di terminal menggunakan perintah Artisan CLI berikut secara berurutan:
+                </p>
+                
+                <div class="code-box">
+                    <code>php artisan make:migration create_majors_table
+php artisan make:migration create_students_table
+php artisan make:migration create_subjects_table
+php artisan make:migration create_student_subject_table</code>
+                </div>
+
+                <p class="report-paragraph">
+                    Setelah berkas migrasi berhasil di-generate di dalam direktori <code>database/migrations/</code>, struktur kolom ditambahkan sebagai berikut:
+                </p>
+
+                <p class="report-paragraph">
+                    <strong>A. Migration Tabel Majors:</strong>
+                </p>
+                <div class="code-box">
+                    <code>Schema::create('majors', function (Blueprint $table) {
+$table->id();
+$table->string('name');
+$table->timestamps();
+});</code>
+                </div>
+
+                <p class="report-paragraph">
+                    <strong>B. Migration Tabel Students:</strong> Kolom <code>major_id</code> diset sebagai <i>foreign key</i> yang terhubung langsung dengan tabel <code>majors</code> menggunakan metode <code>constrained()</code> dengan aksi <code>onDelete('cascade')</code>.
+                </p>
+                <div class="code-box">
+                    <code>Schema::create('students', function (Blueprint $table) {
+    $table->id();
+    $table->string('nim')->unique();
+    $table->string('name');
+    $table->text('address');
+    $table->foreignId('major_id')->constrained('majors')->onDelete('cascade');
+    $table->timestamps();
+});</code>
+                </div>
+
+                <p class="report-paragraph">
+                    <strong>C. Migration Tabel Subjects:</strong>
+                </p>
+                <div class="code-box">
+                    <code>Schema::create('subjects', function (Blueprint $table) {
+    $table->id();
+    $table->string('name');
+    $table->integer('sks');
+    $table->timestamps();
+});</code>
+                </div>
+
+                <p class="report-paragraph">
+                    <strong>D. Migration Tabel Pivot Student_Subject:</strong> Menyimpan relasi perantara <i>Many-to-Many</i> dengan penambahan aturan <code>unique(['student_id', 'subject_id'])</code> untuk mencegah satu mahasiswa mendaftarkan satu mata kuliah yang sama secara ganda di KRS.
+                </p>
+                <div class="code-box">
+                    <code>Schema::create('student_subject', function (Blueprint $table) {
+    $table->id();
+    $table->foreignId('student_id')->constrained('students')->onDelete('cascade');
+    $table->foreignId('subject_id')->constrained('subjects')->onDelete('cascade');
+    $table->timestamps();
+    $table->unique(['student_id', 'subject_id']);
+});</code>
+                </div>
+
+                <p class="report-paragraph">
+                    Setelah seluruh definisi migration selesai disusun, ketikkan perintah berikut untuk bermigrasi secara fisik ke dalam MySQL:
+                </p>
+                <div class="code-box">
+                    <code>php artisan migrate</code>
+                </div>
+
+                <div class="report-image-box">
+                    <img src="../images/migrations8.png"
+                         alt="Sukses Migrasi Database"
+                         class="report-image">
+                    <div class="report-image-caption">Hasil eksekusi migrasi tabel di terminal</div>
+                </div>
+
+                <!-- STEP 2 -->
+                <h4 class="report-subtitle">
+                    2. Membuat Model dengan Relationship
+                </h4>
+
+                <p class="report-paragraph">
+                    Model digunakan untuk merepresentasikan entitas data dan mengonfigurasi logika relasi di Laravel. Kita akan menghasilkan model <code>Major</code>, <code>Student</code>, dan <code>Subject</code>.
+                </p>
+
+                <p class="report-paragraph">
+                    <strong>A. Model Major (<code>app/Models/Major.php</code>):</strong> Mendeklarasikan relasi <i>One-to-Many</i> menggunakan metode <code>hasMany()</code> ke model Student.
+                </p>
+                <div class="code-box">
+                    <code>class Major extends Model
+{
+    use HasFactory;
+    protected $fillable = ['name'];
+
+    public function students()
+    {
+        return $this->hasMany(Student::class);
+    }
+}</code>
+                </div>
+
+                <p class="report-paragraph">
+                    <strong>B. Model Student (<code>app/Models/Student.php</code>):</strong> Mendeklarasikan relasi Many-to-One menggunakan <code>belongsTo()</code> dan relasi Many-to-Many menggunakan <code>belongsToMany()</code>.
+                </p>
+                <div class="code-box">
+                    <code>class Student extends Model
+{
+    use HasFactory;
+    protected $fillable = ['nim', 'name', 'address', 'major_id'];
+
+    public function major()
+    {
+        return $this->belongsTo(Major::class);
+    }
+
+    public function subjects()
+    {
+        return $this->belongsToMany(Subject::class);
+    }
+}</code>
+                </div>
+
+                <p class="report-paragraph">
+                    <strong>C. Model Subject (<code>app/Models/Subject.php</code>):</strong> Mendefinisikan relasi timbal balik Many-to-Many menggunakan <code>belongsToMany()</code>.
+                </p>
+                <div class="code-box">
+                    <code>class Subject extends Model
+{
+    use HasFactory;
+    protected $fillable = ['name', 'sks'];
+
+    public function students()
+    {
+        return $this->belongsToMany(Student::class);
+    }
+}</code>
+                </div>
+
+                <!-- STEP 3 -->
+                <h4 class="report-subtitle">
+                    3. Seeder untuk Data Sample
+                </h4>
+
+                <p class="report-paragraph">
+                     Seeder digunakan untuk mengotomatisasi pengisian baris data uji awal ke dalam database relasi.
+                </p>
+                <div class="code-box">
+                    <code>php artisan make:seeder MajorSeeder
+php artisan make:seeder SubjectSeeder
+php artisan make:seeder StudentSeeder</code>
+                </div>
+
+                <p class="report-paragraph">
+                    Pada berkas <code>StudentSeeder.php</code>, setelah data mahasiswa disimpan, kita pasangkan relasi mata kuliah secara acak (<i>random assignment</i>) menggunakan metode <code>attach()</code>:
+                </p>
+                <div class="code-box">
+                    <code>foreach ($students as $studentData) {
+    $student = Student::create($studentData);
+    $subjects = Subject::inRandomOrder()->take(rand(2, 4))->pluck('id');
+    $student->subjects()->attach($subjects);
+}</code>
+                </div>
+
+                <p class="report-paragraph">
+                    Terakhir, daftarkan seluruh sub-seeder tersebut di dalam <code>DatabaseSeeder.php</code> secara berurutan, lalu jalankan perintah:
+                </p>
+                <div class="code-box">
+                    <code>php artisan db:seed</code>
+                </div>
+
+                <div class="report-image-box">
+                    <img src="../images/seeding data8.png"
+                         alt="Sukses Seeding Data"
+                         class="report-image">
+                    <div class="report-image-caption">Proses pengisian data uji seeder sukses dilakukan</div>
+                </div>
+
+                <!-- STEP 4 -->
+                <h4 class="report-subtitle">
+                    4. Membuat Controller (StudentController)
+                </h4>
+
+                <p class="report-paragraph">
+                    Controller memegang peranan penting dalam mengelola logika pemrosesan data relasi akademik. Berkas controller dibuat dengan perintah:
+                </p>
+                <div class="code-box">
+                    <code>php artisan make:controller StudentController</code>
+                </div>
+
+                <p class="report-paragraph">
+                    Berikut penjelasan logika metode CRUD relasi yang diimplementasikan dalam controller:
+                </p>
+                <ul class="report-list">
+                    <li><strong><code>index()</code>:</strong> Menampilkan daftar mahasiswa. Menggunakan metode <i>Eager Loading</i> <code>Student::with(['major', 'subjects'])</code> untuk mengoptimalkan query database dan mencegah masalah N+1 Query.</li>
+                    <li><strong><code>store()</code>:</strong> Memvalidasi masukan form, menyimpan data mahasiswa baru, lalu menyisipkan keterikatan mata kuliah yang dipilih ke tabel pivot lewat fungsi <code>attach()</code>.</li>
+                    <li><strong><code>update()</code>:</strong> Memperbarui profil dasar mahasiswa sekaligus memperbarui relasi mata kuliah pilihan teranyar secara efisien menggunakan metode <code>sync()</code>.</li>
+                    <li><strong><code>destroy()</code>:</strong> Memutuskan keterikatan relasi mahasiswa di tabel pivot terlebih dahulu dengan fungsi <code>detach()</code> sebelum mengeksekusi penghapusan entitas mahasiswa tersebut.</li>
+                </ul>
+
+                <!-- STEP 5 -->
+                <h4 class="report-subtitle">
+                    5. Membuat Routes
+                </h4>
+
+                <p class="report-paragraph">
+                    Rute dideklarasikan di dalam file <code>routes/web.php</code>. Rute resource membantu memetakan URL ke fungsi controller secara instan, ditambah rute khusus untuk melihat evaluasi latihan relasi database:
+                </p>
+
+                <div class="report-image-box">
+                    <img src="../images/routes student8.png"
+                         alt="Sukses Seeding Data"
+                         class="report-image">
+                </div>
+
+                <!-- STEP 6 -->
+                <h4 class="report-subtitle">
+                    6. Membuat Views dengan Blade Templating
+                </h4>
+
+                <p class="report-paragraph">
+                    Visualisasi program dibangun menggunakan teknologi Bootstrap 5 dan Blade layouting. File-file view diletakkan di dalam folder <code>resources/views/students/</code>:
+                </p>
+                <ul class="report-list">
+                    <li><strong><code>layouts/app.blade.php</code>:</strong> Master layout sebagai cetakan navigasi bar atas dan pembatas konten utama halaman web.</li>
+                    <li><strong><code>students/index.blade.php</code>:</strong> Menyusun visualisasi tabel mahasiswa, daftar lencana program studi, deretan lencana mata kuliah terdaftar, serta akumulasi total sks.</li>
+                    <li><strong><code>students/create.blade.php</code> & <code>edit.blade.php</code>:</strong> Formulir input dinamis yang menampilkan checkbox mata kuliah pilihan menggunakan bantuan perbandingan array <code>in_array()</code>.</li>
+                    <li><strong><code>students/show.blade.php</code>:</strong> Kartu Rencana Studi (KRS) representatif yang merinci data akademik lengkap dari mahasiswa yang bersangkutan.</li>
+                </ul>
+
+                <p class="report-paragraph">
+                    <strong>Tampilan Halaman Utama / KRS Mahasiswa pada Local Server:</strong>
+                </p>
+
+                <div class="report-image-box">
+                    <img src="../images/students8.png"
+                         alt="Tampilan Antarmuka KRS"
+                         class="report-image">
+                    <div class="report-image-caption">Tampilan data relasi mahasiswa</div>
+
+
+               <p class="report-paragraph">
+                    <strong>Tampilan Halaman tambah mahasiswa </strong>
+                </p>
+
+                <div class="report-image-box">
+                    <img src="../images/tambah mhs.png"
+                         alt="Tampilan Antarmuka KRS"
+                         class="report-image"> </div>
+
+                         <img src="../images/students8-2.png"
+                         alt="Tampilan Antarmuka KRS"
+                         class="report-image">
+                    <div class="report-image-caption">Tampilan CRUD add</div> 
+                </div>
+
+                <p class="report-paragraph">
+                    <strong>Tampilan Halaman detail mahasiswa </strong>
+                </p>
+
+                <div class="report-image-box">
+                    <img src="../images/detail mhs.png"
+                         alt="Tampilan Antarmuka KRS"
+                         class="report-image">
+                    <div class="report-image-caption">Tampilan CRUD show</div> 
+                </div>
+
+                <p class="report-paragraph">
+                    <strong>Tampilan Halaman hapus mahasiswa </strong>
+                </p>
+
+                <div class="report-image-box">
+                    <img src="../images/hapus mhs.png"
+                         alt="Tampilan Antarmuka KRS"
+                         class="report-image">
+                    <div class="report-image-caption">Tampilan CRUD hapus</div> 
+                </div>
+
+
+
+                <!-- TUGAS & LATIHAN -->
+                <h2 class="report-heading mt-5">
+                     D. Tugas 
+                </h2>
+
+                <p class="report-paragraph">
+                    <strong>Soal 1: Menampilkan semua mahasiswa beserta jurusan dan mata kuliahnya (Eager Loading)</strong><br>
+                    Untuk menghemat muatan server, query ditulis menggunakan pemanggilan fungsi <code>with()</code> yang menggabungkan relasi major dan subjects sekaligus.
+                </p>
+                <div class="code-box">
+                    <code>$students = Student::with(['major', 'subjects'])->get();</code>
+                </div>
+
+                <p class="report-paragraph">
+                    <strong>Soal 2: Mencari program studi (jurusan) yang memiliki mahasiswa terdaftar terbanyak</strong><br>
+                    Query memanggil database untuk menghitung jumlah relasi menggunakan <code>withCount()</code>, lalu mengurutkannya secara terbalik dan mengambil baris teratas.
+                </p>
+                <div class="code-box">
+                    <code>$mostPopularMajor = Major::withCount('students')
+    ->orderBy('students_count', 'desc')
+    ->first();</code>
+                </div>
+
+                <p class="report-paragraph">
+                    <strong>Soal 3: Menemukan daftar mata kuliah yang diambil oleh mahasiswa spesifik</strong><br>
+                    memanggil data record mahasiswa sampel, lalu memanggil relasi dinamis <code>subjects</code>-nya.
+                </p>
+                <div class="code-box">
+                    <code>$selectedStudent = Student::with('subjects')->first();
+$studentSubjects = $selectedStudent ? $selectedStudent->subjects : collect();</code>
+                </div>
+
+                <p class="report-paragraph">
+                    <strong>Soal 4: Menghitung total SKS yang diambil oleh masing-masing mahasiswa</strong><br>
+                    Penjumlahan bobot SKS diproses secara otomatis langsung di dalam visualisasi Blade menggunakan fungsi agregasi koleksi <code>sum()</code>.
+                </p>
+                <div class="code-box">
+                    <code>$student->subjects->sum('sks')</code>
+                </div>
+
+                 <p class="report-paragraph">
+                    <strong>Tampilan Halaman Query Relationship</strong>
+                </p>
+
+                <div class="report-image-box">
+                    <img src="../images/latihan8.png"
+                         alt="Hasil Latihan Query"
+                         class="report-image">
+                    <div class="report-image-caption">Visualisasi Dashboard hasil query relationship</div>
+                </div>
+
+
+                <!-- KESIMPULAN -->
+                <h2 class="report-heading mt-5">
+                    E. Kesimpulan
+                </h2>
+
+                <p class="report-paragraph">
+                    Berdasarkan pengerjaan praktikum yang telah diselesaikan, beberapa kesimpulan penting yang dapat diambil adalah:
+                </p>
+                <ol class="report-list">
+                    <li>Penerapan relasi basis data melalui <strong>Eloquent ORM</strong> di Laravel terbukti sangat mempermudah pengorganisasian kode program dengan memisahkan bagian basis data, pemroses logika, dan antarmuka.</li>
+                    <li>Penggunaan teknik <strong>Eager Loading</strong> (seperti <code>Student::with(...)</code>) sangat krusial dalam aplikasi nyata untuk memangkas penumpukan query database berlebih (N+1 Query Problem), yang secara signifikan mengoptimalkan performa beban kerja server.</li>
+                    <li>Sistem tabel perantara (<i>pivot table</i>) dalam relasi <i>Many-to-Many</i> berhasil dijembatani secara fleksibel oleh Laravel dengan fungsi manajemen state relasional seperti <code>attach()</code>, <code>sync()</code>, dan <code>detach()</code>.</li>
+                </ol>
+
+            </div>
+            
+            <!-- BUTTON -->
+            <div class="back-btn">
+                <a href="../report.html"
+                   class="btn btn-gold medieval-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Reports
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="custom-footer mt-5 pt-4 pb-2">
+
+        <div class="container text-center py-2">
+
+            <p class="mb-0 gold-light-text">
+                &copy; 2026 dvnmanda — All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
