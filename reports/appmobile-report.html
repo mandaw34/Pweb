@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>dvnmanda – Report Detail</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <style>
+
+        .report-detail-hero {
+            padding-top: 130px;
+            padding-bottom: 70px;
+
+            background:
+                linear-gradient(rgba(0,0,0,0.55),
+                rgba(0,0,0,0.55)),
+                linear-gradient(
+                    135deg,
+                    var(--maroon-dark) 0%,
+                    var(--maroon-light) 45%,
+                    #2a1b1b 100%
+                );
+
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .report-content-section {
+            padding-top: 70px;
+            padding-bottom: 100px;
+        }
+
+        .report-wrapper {
+            background-color: #fdfbf7; /* Diubah jadi warna cerah (krem terang/putih gading) */
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        }
+
+        .report-heading {
+            color: #5c1d1d; /* Warna maroon tua agar kontras dan tetap elegan di background cerah */
+            font-weight: 700;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--gold);
+            padding-left: 15px;
+        }
+
+        .report-paragraph {
+            color: #2b2b2b; /* Warna teks diganti jadi gelap agar mudah dibaca */
+            line-height: 2;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .report-list li {
+            color: #2b2b2b; /* Warna teks list diganti jadi gelap */
+            margin-bottom: 12px;
+            line-height: 1.9;
+        }
+
+        .report-subtitle {
+            color: #5c1d1d; /* Warna sub-judul disesuaikan */
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .report-image-box {
+            margin-top: 30px;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .report-image {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        .report-image-caption {
+            margin-top: 12px;
+            color: #555555;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .back-btn {
+            margin-top: 50px;
+        }
+
+        .code-box {
+            background-color: #1a1a1a;
+            border: 1px solid var(--gold);
+            border-radius: 10px;
+            padding: 20px;
+            overflow-x: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .code-box code {
+            color: #f8f8f2;
+            font-family: Consolas, monospace;
+        }
+
+
+        @media (max-width: 768px) {
+
+            .report-wrapper {
+                padding: 30px 25px;
+            }
+
+        }
+
+       
+    </style>
+</head>
+
+<body class="bg-dark-medieval">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar"
+         data-bs-theme="dark">
+
+        <div class="container">
+
+            <a class="navbar-brand logo-text"
+               href="../index.html">
+
+                DVNMANDA
+
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end"
+                 id="navbarNav">
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="../index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="../about.html">
+                            Profile
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="../portofolio.html">
+                            Gallery
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                           href="../report.html">
+                            Report
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="../kontak.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- HERO -->
+    <section class="report-detail-hero text-center">
+
+        <div class="container">
+
+            <h1 class="display-4 gold-text fw-bold">
+                Laporan Praktikum
+            </h1>
+
+            <p class="lead gold-light-text mt-3">
+
+                Basic Form & Kalkulator Flutter
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CONTENT -->
+    <section class="report-content-section">
+
+        <div class="container">
+
+            <div class="report-wrapper">
+
+                <!-- PENDAHULUAN -->
+                <h2 class="report-heading">
+                    A. Pendahuluan
+                </h2>
+
+                <p class="report-paragraph">
+                    Formulir atau form dalam pengembangan aplikasi mobile merupakan komponen krusial yang berfungsi sebagai media interaksi utama antara pengguna dan sistem. Melalui penggunaan widget seperti <code>TextField</code> dan <code>TextFormField</code>, pengembang dapat mengumpulkan berbagai masukan data dari pengguna, mulai dari teks biasa hingga data yang memerlukan validasi khusus secara langsung seperti format email atau kolom yang wajib diisi.
+                </p>
+
+                <p class="report-paragraph">
+                    Selain pengelolaan masukan data, pengembangan antarmuka interaktif pada Flutter juga didukung oleh pemanfaatan state management lokal menggunakan <code>StatefulWidget</code> dan <code>setState</code> agar tampilan aplikasi dapat merespons perubahan data secara dinamis. Praktikum ini mengeksplorasi implementasi dasar form serta penerapan logika komputasi sederhana untuk membangun aplikasi fungsional seperti kalkulator berbasis mobile.
+                </p>
+
+                <!-- TUJUAN -->
+                <h2 class="report-heading mt-5">
+                    B. Tujuan
+                </h2>
+
+                <ul class="report-list">
+
+                    <li>
+                        Memahami cara penggunaan widget <code>TextField</code> dan <code>TextFormField</code> untuk menerima input data dari pengguna pada aplikasi Flutter.
+                    </li>
+
+                    <li>
+                        Mampu menerapkan sistem validasi form menggunakan <code>GlobalKey&lt;FormState&gt;</code> dan fungsi validator pada Flutter.
+                    </li>
+
+                    <li>
+                        Mampu merancang dan mengimplementasikan logika aplikasi kalkulator aritmatika sederhana menggunakan widget interaktif dan pengendali state.
+                    </li>
+
+                </ul>
+
+                <!-- LANGKAH KERJA -->
+                <h2 class="report-heading mt-5">
+                    C. Langkah Kerja
+                </h2>
+
+                <p class="report-paragraph">
+                    Berikut adalah tahapan-tahapan yang dilakukan dalam pembuatan dan pengujian program basic form serta kalkulator menggunakan Flutter.
+                </p>
+
+                <!-- STEP 1 -->
+                <h4 class="report-subtitle">
+                    1. Implementasi Basic Form Menggunakan TextField
+                </h4>
+
+                <p class="report-paragraph">
+                    Tahap awal mencakup pembuatan antarmuka form sederhana menggunakan widget <code>TextField</code> untuk mengambil input teks langsung dari pengguna dan menampilkannya kembali melalui komponen interaktif.
+                </p>
+
+                <ul class="report-list">
+
+                    <li>
+                        Menyiapkan struktur file utama pada <code>lib/main.dart</code> dengan mendefinisikan kelas aplikasi dan widget stateful untuk form. Baris kode di bawah ini digunakan untuk menginisialisasi pengendali teks (<code>TextEditingController</code>) agar nilai yang diketik pengguna dapat diambil:
+                        <div class="code-box"><code>final TextEditingController _textEditingController = TextEditingController();</code></div>
+                    </li>
+
+                    <li>
+                        Membuat struktur antarmuka tampilan form yang terdiri dari label petunjuk, kolom input teks berdekorasi, serta tombol eksekusi aksi. Baris kode berikut mendefinisikan komponen input teks dengan dekorasi border dan ikon:
+                        <div class="code-box"><code>TextField(<br>&nbsp;&nbsp;controller: _textEditingController,<br>&nbsp;&nbsp;decoration: const InputDecoration(<br>&nbsp;&nbsp;&nbsp;&nbsp;labelText: 'Nama',<br>&nbsp;&nbsp;&nbsp;&nbsp;border: OutlineInputBorder(),<br>&nbsp;&nbsp;),<br>)</code></div>
+                    </li>
+
+                    <li>
+                        Menambahkan tombol <code>ElevatedButton</code> yang berfungsi untuk memicu pemanggilan data input dan menampilkan hasilnya melalui komponen <code>SnackBar</code> ketika tombol ditekan:
+                        <div class="code-box"><code>ElevatedButton(<br>&nbsp;&nbsp;onPressed: () {<br>&nbsp;&nbsp;&nbsp;&nbsp;String inputText = _textEditingController.text;<br>&nbsp;&nbsp;&nbsp;&nbsp;ScaffoldMessenger.of(context).showSnackBar(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SnackBar(content: Text('Nama anda adalah: $inputText')),<br>&nbsp;&nbsp;&nbsp;&nbsp;);<br>&nbsp;&nbsp;},<br>&nbsp;&nbsp;child: const Text('Submit'),<br>)</code></div>
+                    </li>
+
+                    <li>
+                        Tampilan hasil eksekusi program Basic Form pada emulator atau browser:
+                        <img src="../images/basic_form.png"
+                         alt="Basic Form Output"
+                         class="report-image">
+                    </li>
+
+                </ul>
+
+                <!-- STEP 2 -->
+                <h4 class="report-subtitle">
+                    2. Implementasi Form dengan Validasi (TextFormField)
+                </h4>
+
+                <p class="report-paragraph">
+                    Tahap berikutnya melibatkan penggunaan <code>TextFormField</code> di dalam widget <code>Form</code> yang dilengkapi dengan kunci global (<code>_formKey</code>) guna mengevaluasi kelengkapan serta kevalidan data input pengguna.
+                </p>
+
+                <ul class="report-list">
+
+                    <li>
+                        Mendefinisikan <code>GlobalKey</code> dan controller khusus untuk mengontrol status validasi seluruh elemen form di dalam state class:
+                        <div class="code-box"><code>final _formKey = GlobalKey&lt;FormState&gt;();<br>final _nameController = TextEditingController();<br>final _emailController = TextEditingController();</code></div>
+                    </li>
+
+                    <li>
+                        Menambahkan fungsi validasi pada masing-masing <code>TextFormField</code>, seperti memastikan kolom tidak kosong serta format email mengandung karakter '@':
+                        <div class="code-box"><code>validator: (value) {<br>&nbsp;&nbsp;if (value == null || value.isEmpty) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return 'Masukkan email anda';<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;if (!value.contains('@')) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return 'Email tidak valid';<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;return null;<br>}</code></div>
+                    </li>
+
+                    <li>
+                        Membuat fungsi tombol submit yang mengecek apakah seluruh kondisi validasi form terpenuhi sebelum menampilkan pesan sukses:
+                        <div class="code-box"><code>void _submitForm() {<br>&nbsp;&nbsp;if (_formKey.currentState!.validate()) {<br>&nbsp;&nbsp;&nbsp;&nbsp;String name = _nameController.text;<br>&nbsp;&nbsp;&nbsp;&nbsp;String email = _emailController.text;<br>&nbsp;&nbsp;&nbsp;&nbsp;ScaffoldMessenger.of(context).showSnackBar(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SnackBar(content: Text('Validasi $name, $email Berhasil'))<br>&nbsp;&nbsp;&nbsp;&nbsp;);<br>&nbsp;&nbsp;}<br>}</code></div>
+                    </li>
+
+                    <li>
+                        Tampilan hasil pengujian validasi <code>TextFormField</code> pada aplikasi:
+                        <img src="../images/textformfield.png"
+                         alt="TextFormField Validation Output"
+                         class="report-image">
+                    </li>
+
+                </ul>
+
+                <!-- STEP 3 -->
+                <h4 class="report-subtitle">
+                    3. Pembuatan Aplikasi Kalkulator Aritmatika (Kabataku)
+                </h4>
+
+                <p class="report-paragraph">
+                    Tahap akhir dari penugasan praktikum ini adalah membangun aplikasi kalkulator yang mampu menjalankan operasi aritmatika dasar (kali, bagi, tambah, kurang) menggunakan dua buah widget input angka dan tombol eksekusi.
+                </p>
+
+                <ul class="report-list">
+
+                    <li>
+                        Menyiapkan dua pengendali input khusus angka untuk menampung nilai pertama dan kedua dari pengguna:
+                        <div class="code-box"><code>final TextEditingController _angka1Controller = TextEditingController();<br>final TextEditingController _angka2Controller = TextEditingController();</code></div>
+                    </li>
+
+                    <li>
+                        Menerapkan fungsi logika perhitungan matematika yang memproses parsing string input menjadi tipe data angka serta menangani pengecekan pembagian dengan angka nol:
+                        <div class="code-box"><code>void _hitung(String operasi) {<br>&nbsp;&nbsp;double? angka1 = double.tryParse(_angka1Controller.text);<br>&nbsp;&nbsp;double? angka2 = double.tryParse(_angka2Controller.text);<br>&nbsp;&nbsp;if (angka1 == null || angka2 == null) return;<br>&nbsp;&nbsp;setState(() {<br>&nbsp;&nbsp;&nbsp;&nbsp;switch (operasi) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 'tambah': _hasil = (angka1 + angka2).toString(); break;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 'kurang': _hasil = (angka1 - angka2).toString(); break;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 'kali': _hasil = (angka1 * angka2).toString(); break;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 'bagi': _hasil = (angka2 == 0) ? 'Error' : (angka1 / angka2).toString(); break;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;});<br>}</code></div>
+                    </li>
+
+                    <li>
+                        Tampilan antarmuka aplikasi kalkulator kabataku saat dijalankan:
+                        <img src="../images/kalkulator.png"
+                         alt="Kalkulator Output"
+                         class="report-image">
+                    </li>
+
+                </ul>
+
+                <!-- KESIMPULAN -->
+                <h2 class="report-heading mt-5">
+                    D. Kesimpulan
+                </h2>
+
+                <p class="report-paragraph">
+                    Praktikum ini berhasil diselesaikan dengan mengimplementasikan konsep dasar pembuatan form pada Flutter, mulai dari penggunaan <code>TextField</code> sederhana hingga penerapan validasi data tingkat lanjut menggunakan <code>TextFormField</code> serta pemanfaatan <code>GlobalKey</code>. Seluruh komponen penunjang interaksi pengguna terintegrasi dengan baik untuk membangun antarmuka aplikasi yang responsif dan fungsional.
+                </p>
+
+                <div class="github-btn-box">
+                    <a href="https://github.com/mandaw34/dvmanda-AplikasiMobile" target="_blank" class="btn btn-gold medieval-btn">
+                        <i class="fab fa-github"></i> VIEW GITHUB
+                    </a>
+                </div>
+                
+                <!-- BUTTON -->
+                <div class="back-btn">
+
+                    <a href="../report.html"
+                       class="btn btn-gold medieval-btn">
+
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Reports
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="custom-footer mt-5 pt-4 pb-2">
+
+        <div class="container text-center py-2">
+
+            <p class="mb-0 gold-light-text">
+
+                &copy; 2026 dvnmanda — All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

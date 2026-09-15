@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>dvnmanda – Report Detail</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <style>
+
+        .report-detail-hero {
+            padding-top: 130px;
+            padding-bottom: 70px;
+
+            background:
+                linear-gradient(rgba(0,0,0,0.55),
+                rgba(0,0,0,0.55)),
+                linear-gradient(
+                    135deg,
+                    var(--maroon-dark) 0%,
+                    var(--maroon-light) 45%,
+                    #2a1b1b 100%
+                );
+
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .report-content-section {
+            padding-top: 70px;
+            padding-bottom: 100px;
+        }
+
+        .report-wrapper {
+            background-color: var(--maroon-dark);
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        }
+
+        .report-heading {
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--gold);
+            padding-left: 15px;
+        }
+
+        .report-paragraph {
+            color: var(--gold-light);
+            line-height: 2;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .report-list li {
+            color: var(--gold-light);
+            margin-bottom: 12px;
+            line-height: 1.9;
+        }
+
+        .report-subtitle {
+            color: var(--gold);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .report-image-box {
+            margin-top: 30px;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .report-image {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        .report-image-caption {
+            margin-top: 12px;
+            color: var(--gold-light);
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .back-btn {
+            margin-top: 50px;
+        }
+
+        .code-box {
+            background-color: #1a1a1a;
+            border: 1px solid var(--gold);
+            border-radius: 10px;
+            padding: 20px;
+            overflow-x: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .code-box code {
+            color: #f8f8f2;
+            font-family: Consolas, monospace;
+        }
+
+
+        @media (max-width: 768px) {
+
+            .report-wrapper {
+                padding: 30px 25px;
+            }
+
+        }
+
+       
+    </style>
+</head>
+
+<body class="bg-dark-medieval">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar"
+         data-bs-theme="dark">
+
+        <div class="container">
+
+            <a class="navbar-brand logo-text"
+               href="../index.html">
+
+                DVNMANDA
+
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end"
+                 id="navbarNav">
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="../index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="../about.html">
+                            Profile
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="../portofolio.html">
+                            Gallery
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                           href="../report.html">
+                            Report
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="../kontak.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- HERO -->
+    <section class="report-detail-hero text-center">
+
+        <div class="container">
+
+            <h1 class="display-4 gold-text fw-bold">
+                Laporan Praktikum
+            </h1>
+
+            <p class="lead gold-light-text mt-3">
+
+                MIGRATION, SEEDING, ROUTING, MODEL, CONTROLLER, VIEW
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CONTENT -->
+    <section class="report-content-section">
+
+        <div class="container">
+
+            <div class="report-wrapper">
+
+                <!-- PENDAHULUAN -->
+                <h2 class="report-heading">
+                    A. Pendahuluan
+                </h2>
+
+                <p class="report-paragraph">
+                    Laravel adalah salah satu framework PHP paling populer di dunia yang menggunakan pola arsitektur MVC (Model-View-Controller). Pola ini memisahkan aplikasi menjadi tiga komponen utama untuk mempermudah pengembangan dan pemeliharaan kode:
+                    <ol>
+                        <li> Model: Mengatur logika data, interaksi dengan database (menggunakan Eloquent ORM), serta mendefinisikan struktur tabel.</li>
+                        <li>View: Mengatur tampilan antarmuka pengguna (user interface) menggunakan Blade Templating Engine bawaan Laravel yang memudahkan pembuatan layout dinamis.</li>
+                        <li> Controller: Bertindak sebagai jembatan penghubung yang menerima request dari routing (URL), memproses logika bisnis melalui Model, dan mengirimkan hasilnya ke View.</li>
+                    </ol>
+                    Beberapa konsep penting yang dipelajari pada praktikum ini meliputi:
+                    <ul class="numbering">
+                        <li>Routing: Mekanisme pemetaan URL ke fungsi tertentu di dalam aplikasi.</li>
+                        <li>Resource Controller: Controller standar Laravel yang menyediakan method lengkap untuk operasi CRUD secara otomatis (index, create, store, show, edit, update, destroy).</li>
+                        <li>Migrations: Pengontrol versi (version control) untuk database yang memungkinkan developer mendefinisikan skema tabel langsung melalui kode PHP.</li>
+                        <li>Seeders: Mekanisme untuk mengisi database dengan data awal atau data contoh (dummy data) secara otomatis untuk kebutuhan pengujian.</li>
+                    </ul>
+
+                <!-- TUJUAN -->
+                <h2 class="report-heading mt-5">
+                    B. Tujuan
+                </h2>
+
+                <ol>
+                    <li>Memahami arsitektur Model-View-Controller (MVC) pada framework Laravel.</li>
+                    <li>Mampu merancang mekanisme Routing, Controller, dan View secara terintegrasi.</li>
+                    <li>Memahami dan mengimplementasikan konsep Resource Controller untuk menyederhanakan kode CRUD.</li>
+                    <li>Mampu mengimplementasikan Blade Layouting untuk efisiensi pembuatan antarmuka halaman web. </li>
+                    <li>Mampu menghubungkan aplikasi Laravel dengan database melalui Migration dan Seeder.</li>
+                    <li> Mampu membuat sistem CRUD (Create, Read, Update, Delete) data dinamis secara utuh.</li>
+                </ol>
+
+                <!-- LANGKAH KERJA -->
+                <h2 class="report-heading mt-5">
+                    C. Langkah Kerja
+                </h2>
+
+                <!-- STEP 1 -->
+                <h4 class="report-subtitle">
+                    1. Konfigurasi Database
+                </h4>
+
+                <p class="report-paragraph">
+                    Langkah pertama membuka file .env kemudian ubah konfigurasi database sebegai berikut:</p>
+
+                    <img src="../images/env.png"
+                         alt="Laravel Setup"
+                         class="report-image">
+                         
+               <!-- STEP 2 -->
+                <h4 class="report-subtitle">
+                    2. Membuat Migration
+                </h4>
+
+                <p class="report-paragraph">
+                    Langkah selanjutnya yaitu membuat migration untuk tabel <b>products</b>. 
+                    Migration digunakan untuk mengatur struktur database secara otomatis melalui Laravel.
+                </p>
+                <div class="code-box">
+                    <code>
+                        php artisan make:migration create_products_table
+                    </code>
+                </div>
+                 <img src="../images/migration product.png"
+                         alt="Laravel Setup"
+                         class="report-image">  </p>
+                <p>
+                    Setelah file migration berhasil dibuat, kemudian menambahkan
+                    struktur tabel products seperti field name, price,
+                    description, dan timestamps. </p>
+                         
+                        <img src="../images/migrations.png"
+                         alt="Laravel Setup"
+                         class="report-image">  
+                        </p>
+
+                <p>
+                    Setelah migration selesai dibuat, langkah berikutnya yaitu menjalankan migration agar tabel otomatis terbentuk pada database.</p>
+                    <div class="code-box">
+                    <code>
+                    php artisan migrate
+                    </code>
+                        </div>
+                         <img src="../images/artisan migrate.png"
+                         alt="Laravel Setup"
+                         class="report-image"> 
+                </p>
+
+
+                <!-- STEP 3 -->
+                <h4 class="report-subtitle">
+                    3. Membuat Seeder
+                </h4>
+
+                <p class="report-paragraph">
+                     Seeder digunakan untuk mengisi data awal ke dalam database. 
+                     Pada praktikum ini dibuat ProductSeeder untuk menambahkan beberapa data produk secara otomatis.
+                </p>
+                <div class="code-box">
+                    <code>
+                    php artisan make:seeder ProductSeeder
+                    </code>
+                        </div>
+
+                    <img src="../images/productSeeder.png"
+                         alt="Laravel Setup"
+                         class="report-image"> </p>
+
+                 <p>
+                    Setelah file seeder selesai dibuat dan diisi data produk,
+                    seeder dijalankan menggunakan artisan command agar data
+                    otomatis masuk ke database.
+                </p>
+
+                <div class="code-box">
+                    <code>
+                    php artisan db:seed
+                    </code>
+                        </div>
+
+                     <img src="../images/seeding data 1.png"
+                         alt="Laravel Setup"
+                         class="report-image"> 
+
+                <!-- STEP 4 -->
+                <h4 class="report-subtitle">
+                    4. Membuat Routing
+                </h4>
+
+                <p>
+                    Routing digunakan untuk menentukan URL dan respon
+                    yang diberikan aplikasi Laravel. Routing dibuat pada
+                    file <b>routes/web.php</b>.
+                </p>
+
+                <div class="code-box">
+            <code>
+            Route::get('/products', function () {
+                return view('products');
+            });
+            </code>
+                </div>
+
+                <div class="report-image mt-4">
+                    <img src="../images/routing1.png"
+                        class="img-fluid w-100"
+                        alt="Routing Laravel">
+                </div>
+
+            
+
+            <!-- STEP 5 -->
+            <h4 class="report-subtitle">
+                5. Membuat Model
+            </h4>
+
+            <p class="report-paragraph">
+                Model digunakan untuk berinteraksi langsung dengan database.
+                Laravel menggunakan Eloquent ORM sehingga proses pengelolaan
+                data menjadi lebih mudah dan terstruktur.
+            </p>
+
+            <p class="report-paragraph">
+                Setelah model berhasil dibuat, kemudian menambahkan properti
+                <b>$fillable</b> pada file <b>Product.php</b> agar field
+                yang digunakan dapat diisi secara otomatis.
+            </p>
+
+            <img src="../images/model1.png"
+                alt="Model Laravel"
+                class="report-image">
+
+
+            <!-- STEP 6 -->
+            <h4 class="report-subtitle">
+                6. Membuat Controller
+            </h4>
+
+            <p class="report-paragraph">
+                Controller digunakan untuk mengatur logika aplikasi dan
+                menjadi penghubung antara model dengan view.
+            </p>
+
+            <div class="code-box">
+                <code>
+            php artisan make:controller ProductController
+                </code>
+            </div>
+
+            <img src="../images/productController.png"
+                alt="Controller Laravel"
+                class="report-image">
+
+            <p class="report-paragraph">
+                Setelah controller berhasil dibuat, kemudian menambahkan
+                method <b>index()</b> untuk menampilkan halaman product.
+            </p>
+
+            <div class="code-box">
+            <code>
+            public function index()
+            {
+                return 'Halaman Product';
+            }
+            </code>
+            </div>
+
+            <p class="report-paragraph">
+                Selanjutnya route dihubungkan dengan controller melalui file
+                <b>web.php</b>.
+            </p>
+
+            <img src="../images/PcontrollerRoute.png"
+                alt="Controller Route"
+                class="report-image">
+
+
+            <!-- STEP 7 -->
+            <h4 class="report-subtitle">
+                7. Membuat View Blade
+            </h4>
+
+            <p class="report-paragraph">
+                View digunakan untuk menampilkan halaman kepada pengguna.
+                Laravel menggunakan Blade Template Engine untuk mempermudah
+                pembuatan tampilan website yang dinamis.
+            </p>
+
+            <p class="report-paragraph">
+                Langkah pertama yaitu membuat file
+                <b>products.blade.php</b> pada folder
+                <b>resources/views</b>.
+            </p>
+
+            <div class="code-box">
+            <code>
+            &lt;h1&gt;Daftar Produk&lt;/h1&gt;
+            </code>
+            </div>
+
+            <img src="../images/blade view.png"
+                alt="Blade View"
+                class="report-image">
+
+            <p class="report-paragraph">
+                Setelah view berhasil dibuat, kemudian data dikirimkan dari
+                route menuju view menggunakan variabel products.
+            </p>
+
+            <img src="../images/view data.png"
+                alt="View Data"
+                class="report-image">
+
+            <p class="report-paragraph">
+                Data kemudian ditampilkan menggunakan perulangan Blade
+                directive <b>@foreach</b>.
+            </p>
+
+            <img src="../images/blade loop.png"
+                alt="Blade Loop"
+                class="report-image"> </p>
+
+
+                <p> <B> Tampilan Pada Server Local:  </B>
+                    <img src="../images/tampilan product.png"
+                alt="Blade Loop"
+                class="report-image">
+
+                </p>
+
+
+            <h2 class="report-heading mt-5">
+                 D. Tugas
+             </h2>
+            <h4 class="report-subtitle">
+                 Tugas Individu CRUD Mahasiswa
+            </h4>
+
+            <p class="report-paragraph">
+                Pada tugas individu, dibuat sistem CRUD data mahasiswa
+                menggunakan Laravel. Langkah pertama yaitu membuat model,
+                migration, controller, dan seeder secara otomatis menggunakan
+                artisan command berikut.
+            </p>
+
+            <div class="code-box">
+            <code>
+            php artisan make:model Student -mcs
+            </code>
+            </div>
+
+            <img src="../images/student crud.png"
+                alt="Student CRUD"
+                class="report-image">
+
+            <p class="report-paragraph">
+                Setelah seluruh file berhasil dibuat, kemudian migration
+                diubah untuk menambahkan field nim, nama, jurusan,
+                dan angkatan pada tabel students.
+            </p>
+
+            <div class="code-box">
+            <code>
+            $table->string('nim', 15)->unique();
+            $table->string('nama', 100);
+            $table->string('jurusan', 100);
+            $table->integer('angkatan');
+            </code>
+            </div>
+
+            <img src="../images/student-migration.png"
+                alt="Student Migration"
+                class="report-image">
+
+            <p class="report-paragraph">
+                Selanjutnya dibuat data dummy menggunakan StudentSeeder
+                agar data mahasiswa otomatis masuk ke database.
+            </p>
+
+            <div class="code-box">
+            <code>
+            php artisan migrate:fresh --seed
+            </code>
+            </div>
+
+            <img src="../images/student seeder.png"
+                alt="Student Seeder"
+                class="report-image">
+
+            <p class="report-paragraph">
+                Setelah proses migrate dan seeding berhasil dilakukan,
+                aplikasi dijalankan menggunakan artisan server dan diuji
+                melalui browser pada route students.
+            </p>
+
+            <div class="code-box">
+            <code>
+            php artisan serve
+            </code>
+            </div>
+
+            <img src="../images/student-browser.png"
+                alt="Student Browser"
+                class="report-image"> </p>
+
+            <img src="../images/add.png"
+                            alt="Student Browser"
+                            class="report-image"> </p>
+
+                <img src="../images/edit.png"
+                alt="Student Browser"
+                class="report-image"> </p>
+
+                <img src="../images/add2.png"
+                alt="Student Browser"
+                class="report-image"> </p>
+
+                <img src="../images/delete.png"
+                alt="Student Browser"
+                class="report-image"> </p>
+
+
+            <!-- KESIMPULAN -->
+            <h2 class="report-heading mt-5">
+                D. Kesimpulan
+            </h2>
+
+            <p class="report-paragraph">
+                Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan
+                bahwa Laravel merupakan framework PHP yang mempermudah proses
+                pengembangan aplikasi web melalui konsep MVC dan berbagai
+                fitur bawaan yang lengkap. Dengan adanya migration, seeding,
+                routing, model, controller, dan blade template, proses
+                pengembangan aplikasi menjadi lebih terstruktur dan efisien.
+            </p>
+
+            <p class="report-paragraph">
+                Praktikum ini juga memberikan pemahaman mengenai pembuatan
+                sistem CRUD sederhana menggunakan Laravel. Penggunaan artisan
+                command membantu mempercepat proses pembuatan project sehingga
+                developer dapat lebih fokus pada pengembangan fitur aplikasi.
+            </p>
+            </div>
+            
+                <!-- BUTTON -->
+                <div class="back-btn">
+
+                    <a href="../report.html"
+                       class="btn btn-gold medieval-btn">
+
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Reports
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="custom-footer mt-5 pt-4 pb-2">
+
+        <div class="container text-center py-2">
+
+            <p class="mb-0 gold-light-text">
+
+                &copy; 2025 dvnmanda — All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
