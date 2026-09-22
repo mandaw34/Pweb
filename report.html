@@ -35,7 +35,7 @@
         }
 
         .report-section {
-            padding-top: 70px;
+            padding-top: 50px;
             padding-bottom: 90px;
         }
 
@@ -97,6 +97,30 @@
             background-color: var(--gold);
             color: var(--maroon-dark);
         }
+
+        </style>
+    <style>
+    .filter-btn {
+            background-color: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+            font-weight: 600;
+            border-radius: 12px; /* Membuat sudutnya kotak sedikit melengkung */
+            padding: 10px 24px;
+            margin: 0 6px 10px 6px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Saat tombol di-hover atau sedang dalam keadaan aktif */
+        .filter-btn:hover, 
+        .filter-btn.active {
+            background-color: rgba(255, 215, 0, 0.15); /* Efek transparan emas tipis saat aktif */
+            color: var(--gold);
+            border-color: var(--gold);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.25); /* Efek glow tipis biar kelihatan elegan */
+        }
+</style>
 
     </style>
 </head>
@@ -198,217 +222,132 @@
 
         <div class="container">
 
-            <div class="row g-4">
+            <!-- FILTER KATEGORI MATAKULIAH -->
+            <div class="text-center mb-5">
+                <button class="btn filter-btn active" data-filter="all">ALL</button>
+                <button class="btn filter-btn" data-filter="pweb">Pemrograman Web</button>
+                <button class="btn filter-btn" data-filter="appmobs">Aplikasi Mobile</button>
+                <!-- KELAK KALAU ADA MATKUL BARU, TINGGAL TAMBAHIN TOMBOLNYA DI SINI -->
+                <!-- <button class="btn filter-btn" data-filter="namamatkul">Nama Matkul Baru</button> -->
+            </div>
 
-                <!-- CARD 1 -->
-                <div class="col-md-6 col-lg-4">
+            <!-- DAFTAR CARD LAPORAN -->
+            <div class="row g-4" id="report-container">
 
+                <!-- CARD 1 - PWEB -->
+                <div class="col-md-6 col-lg-4 card-item pweb">
                     <div class="card custom-card h-100 report-card">
-
                         <div class="report-top-line"></div>
-
                         <div class="card-body report-card-body d-flex flex-column">
-
-                            <span class="report-badge">
-                                Week 6
-                            </span>
-
-                            <h4 class="report-title">
-                                Laravel Configuration
-                            </h4>
-
+                            <span class="report-badge">Pemrograman Web • Week 6</span>
+                            <h4 class="report-title">Laravel Configuration</h4>
                             <div class="mt-auto">
-
-                                <a href="reports/report1.html"
-                                   class="btn btn-gold medieval-btn w-100 mb-2">
-
-                                    View Report
-                                    <i class="fas fa-book-open"></i>
-
+                                <a href="reports/report1.html" class="btn btn-gold medieval-btn w-100 mb-2">
+                                    View Report <i class="fas fa-book-open"></i>
                                 </a>
-
-                                <a href="https://github.com/mandaw34/pemrograman-web/tree/main/praktikum"
-                                   target="_blank"
-                                   class="btn github-btn w-100">
-
-                                    <i class="fab fa-github"></i>
-                                    View Github
-
+                                <a href="https://github.com/mandaw34/pemrograman-web/tree/main/praktikum" target="_blank" class="btn github-btn w-100">
+                                    <i class="fab fa-github"></i> View Github
                                 </a>
-
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
-                <!-- CARD 2 -->
-                <div class="col-md-6 col-lg-4">
-
+                <!-- CARD 2 - PWEB -->
+                <div class="col-md-6 col-lg-4 card-item pweb">
                     <div class="card custom-card h-100 report-card">
-
                         <div class="report-top-line"></div>
-
                         <div class="card-body report-card-body d-flex flex-column">
-
-                            <span class="report-badge">
-                                Week 7
-                            </span>
-
-                            <h4 class="report-title">
-                                MIGRATION, SEEDING, ROUTING, MODEL, CONTROLLER, VIEW
-                            </h4>
-
+                            <span class="report-badge">Pemrograman Web • Week 7</span>
+                            <h4 class="report-title">MIGRATION, SEEDING, ROUTING, MODEL, CONTROLLER, VIEW</h4>
                             <div class="mt-auto">
-
-                                <a href="reports/report2.html"
-                                   class="btn btn-gold medieval-btn w-100 mb-2">
-
-                                    View Report
-                                    <i class="fas fa-book-open"></i>
-
+                                <a href="reports/report2.html" class="btn btn-gold medieval-btn w-100 mb-2">
+                                    View Report <i class="fas fa-book-open"></i>
                                 </a>
-
-                                <a href="https://github.com/mandaw34/pemrograman-web/tree/main/praktikum"
-                                   target="_blank"
-                                   class="btn github-btn w-100">
-
-                                    <i class="fab fa-github"></i>
-                                    View Github
-
+                                <a href="https://github.com/mandaw34/pemrograman-web/tree/main/praktikum" target="_blank" class="btn github-btn w-100">
+                                    <i class="fab fa-github"></i> View Github
                                 </a>
-
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
-                <!-- CARD 3 -->
-                <div class="col-md-6 col-lg-4">
-
+                <!-- CARD 3 - PWEB -->
+                <div class="col-md-6 col-lg-4 card-item pweb">
                     <div class="card custom-card h-100 report-card">
-
                         <div class="report-top-line"></div>
-
                         <div class="card-body report-card-body d-flex flex-column">
-
-                            <span class="report-badge">
-                                Week 8
-                            </span>
-
-                            <h4 class="report-title">
-                             LARAVEL DATABASE RELATIONSHIP
-                            </h4>
-
+                            <span class="report-badge">Pemrograman Web • Week 8</span>
+                            <h4 class="report-title">LARAVEL DATABASE RELATIONSHIP</h4>
                             <div class="mt-auto">
-
-                                <a href="reports/report3.html"
-                                   class="btn btn-gold medieval-btn w-100 mb-2">
-
-                                    View Report
-                                    <i class="fas fa-book-open"></i>
-
+                                <a href="reports/report3.html" class="btn btn-gold medieval-btn w-100 mb-2">
+                                    View Report <i class="fas fa-book-open"></i>
                                 </a>
-
-                                <a href="https://github.com/mandaw34/pemrograman-web/tree/main/praktikum8"
-                                   target="_blank"
-                                   class="btn github-btn w-100">
-
-                                    <i class="fab fa-github"></i>
-                                    View Github
-
+                                <a href="https://github.com/mandaw34/pemrograman-web/tree/main/praktikum8" target="_blank" class="btn github-btn w-100">
+                                    <i class="fab fa-github"></i> View Github
                                 </a>
-
                             </div>
-
-
                         </div>
-
                     </div>
-
                 </div>
 
-                <!-- CARD 4 -->
-                <div class="col-md-6 col-lg-4">
-
+                <!-- CARD 4 - PWEB -->
+                <div class="col-md-6 col-lg-4 card-item pweb">
                     <div class="card custom-card h-100 report-card">
-
                         <div class="report-top-line"></div>
-
                         <div class="card-body report-card-body d-flex flex-column">
-
-                            <span class="report-badge">
-                                Week 9
-                            </span>
-
-                            <h4 class="report-title">
-                                Laravel UI Bootstrap dan Templating
-                            </h4>
-
+                            <span class="report-badge">Pemrograman Web • Week 9</span>
+                            <h4 class="report-title">Laravel UI Bootstrap dan Templating</h4>
                             <div class="mt-auto">
-
-                                <a href="reports/report4.html"
-                                   class="btn btn-gold medieval-btn w-100 mb-2">
-
-                                    View Report
-                                    <i class="fas fa-book-open"></i>
-
+                                <a href="reports/report4.html" class="btn btn-gold medieval-btn w-100 mb-2">
+                                    View Report <i class="fas fa-book-open"></i>
                                 </a>
-
-                                <a href="https://github.com/mandaw34/pemrograman-web/tree/main/laravel-sisfo"
-                                   target="_blank"
-                                   class="btn github-btn w-100">
-
-                                    <i class="fab fa-github"></i>
-                                    View Github
-
+                                <a href="https://github.com/mandaw34/pemrograman-web/tree/main/laravel-sisfo" target="_blank" class="btn github-btn w-100">
+                                    <i class="fab fa-github"></i> View Github
                                 </a>
-
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
-                <!-- CARD 5 -->
-                <div class="col-md-6 col-lg-4">
-
+                <!-- CARD 5 - APPMOBS -->
+                <div class="col-md-6 col-lg-4 card-item appmobs">
                     <div class="card custom-card h-100 report-card">
-
                         <div class="report-top-line"></div>
-
                         <div class="card-body report-card-body d-flex flex-column">
-
-                            <span class="report-badge">
-                                MOBILE APP
-                            </span>
-
-                            <h4 class="report-title">
-                                MOBILE APP REPORT
-                            </h4>
-
+                            <span class="report-badge">Aplikasi Mobile • Week 1</span>
+                            <h4 class="report-title">Input Widgets dan Basic Form</h4>
                             <div class="mt-auto">
-
-                                <a href="reports/appmobile-report.html"
-                                   class="btn btn-gold medieval-btn w-100 mb-2">
-
-                                    Open Report
-                                    <i class="fas fa-book-open"></i>
-
+                                <a href="reports/appmobile-report.html" class="btn btn-gold medieval-btn w-100 mb-2">
+                                    Open Report <i class="fas fa-book-open"></i>
                                 </a>
-
                             </div>
                         </div>
-
                     </div>
+                </div>
 
+                <!-- ========================================================== -->
+                <!-- TEMPLATE CARD CADANGAN UNTUK MATKUL / MINGGU DEPAN         -->
+                <!-- Kamu tinggal copy-paste card di bawah ini kalau mau nambah!  -->
+                <!-- ========================================================== -->
+
+                <!-- TEMPLATE: Ganti 'appmobs' dengan class matkul baru, atau biarkan kalau buat appmobs -->
+                <div class="col-md-6 col-lg-4 card-item appmobs">
+                    <div class="card custom-card h-100 report-card">
+                        <div class="report-top-line"></div>
+                        <div class="card-body report-card-body d-flex flex-column">
+                            <span class="report-badge">Aplikasi Mobile • Week 2</span>
+                            <h4 class="report-title">Widget, Layouting and Styling</h4>
+                            <div class="mt-auto">
+                                <a href="reports/appmobile-report2.html" class="btn btn-gold medieval-btn w-100 mb-2">
+                                    View Report <i class="fas fa-book-open"></i>
+                                </a>
+                                <a href="https://github.com/mandaw34/dvmanda-AplikasiMobile/tree/praktikum-2" target="_blank" class="btn github-btn w-100">
+                                    <i class="fab fa-github"></i> View Github
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -433,6 +372,31 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPT FILTER KATEGORI OTOMATIS -->
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cardItems = document.querySelectorAll('.card-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Hapus class active dari tombol lain
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                // Tambah class active ke tombol yang diklik
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                cardItems.forEach(item => {
+                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>

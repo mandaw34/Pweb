@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dvnmanda – Report Detail Modul 1 & 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <style>
+        .report-detail-hero {
+            padding-top: 130px;
+            padding-bottom: 70px;
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon-light) 45%, #2a1b1b 100%);
+            border-bottom: 3px solid var(--gold);
+        }
+        .report-content-section {
+            padding-top: 70px;
+            padding-bottom: 100px;
+        }
+        .report-wrapper {
+            background-color: #fdfbf7;
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        }
+        .module-card-section {
+            background-color: #ffffff;
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .module-card-title {
+            color: #5c1d1d;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+        }
+        .report-heading {
+            color: #5c1d1d;
+            font-weight: 700;
+            margin-top: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--gold);
+            padding-left: 15px;
+            font-size: 1.3rem;
+        }
+        .report-paragraph {
+            color: #2b2b2b;
+            line-height: 2;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        .report-list li {
+            color: #2b2b2b;
+            margin-bottom: 12px;
+            line-height: 1.9;
+        }
+        .report-subtitle {
+            color: #5c1d1d;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+        /* Style khusus gambar Carbon.sh agar pas ukurannya dan tidak full layar */
+        .carbon-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .report-image {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .back-btn {
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .report-wrapper { padding: 30px 20px; }
+            .module-card-section { padding: 20px; }
+            .carbon-img { max-width: 100%; }
+        }
+    </style>
+</head>
+<body class="bg-dark-medieval">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand logo-text" href="../index.html">DVNMANDA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../portofolio.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../report.html">Report</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../kontak.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="report-detail-hero text-center">
+        <div class="container">
+            <h1 class="display-4 gold-text fw-bold">Laporan Praktikum</h1>
+            <p class="lead gold-light-text mt-3">Modul 1: Pengenalan Widgets & Modul 2: Layouting & Styling</p>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="report-content-section">
+        <div class="container">
+            <div class="report-wrapper">
+
+                <!-- ======================================================== -->
+                <!-- MODUL 1                                                  -->
+                <!-- ======================================================== -->
+                <div class="module-card-section">
+                    <h2 class="module-card-title">
+                        <i class="fas fa-cube me-2"></i> Modul I: Pengenalan Widgets (Stateless, StatefulWidget, & State Dasar)
+                    </h2>
+
+                    <h3 class="report-heading">A. Pendahuluan</h3>
+                    <p class="report-paragraph">
+                        Dalam ekosistem pengembangan aplikasi mobile menggunakan kerangka kerja Flutter, pemahaman mengenai struktur hierarki widget merupakan pondasi utama. Kerangka dasar aplikasi dibentuk melalui pemanfaatan komponen inti seperti <code>MaterialApp</code> sebagai konfigurasi global dan <code>Scaffold</code> sebagai penyedia struktur tata letak visual standar. Pengembang perlu memahami klasifikasi komponen antarmuka yang terbagi menjadi widget statis dan dinamis guna memastikan efisiensi performa serta responsivitas aplikasi terhadap interaksi pengguna.
+                    </p>
+                    <p class="report-paragraph">
+                        Pengelolaan data internal menjadi pembeda utama antara komponen yang bersifat statis murni dengan komponen yang memerlukan pembaruan status secara berkala. Melalui pemanfaatan fungsi pengendali state seperti <code>setState()</code>, antarmuka aplikasi mampu merespons aksi masukan secara langsung tanpa perlu membangun ulang keseluruhan hierarki aplikasi dari awal. Praktikum ini mengarahkan pengembang untuk mempraktikkan secara langsung perbedaan perilaku antara widget statis dan dinamis dalam membangun elemen antarmuka fungsional.
+                    </p>
+
+                    <h3 class="report-heading">B. Tujuan</h3>
+                    <ul class="report-list">
+                        <li>Memahami kerangka dasar aplikasi Flutter menggunakan <code>MaterialApp</code> dan <code>Scaffold</code>.</li>
+                        <li>Membedakan penggunaan komponen <code>StatelessWidget</code> dan <code>StatefulWidget</code> secara tepat.</li>
+                        <li>Menerapkan fungsi <code>setState()</code> untuk menciptakan antarmuka aplikasi yang interaktif.</li>
+                    </ul>
+
+                    <h3 class="report-heading">C. Langkah Kerja</h3>
+                    <p class="report-paragraph">
+                        Berikut adalah langkah-langkah dari implementasi kode program yang digunakan dalam praktikum modul pertama:
+                    </p>
+
+                    <h4 class="report-subtitle">1. Inisialisasi Program Utama & Konfigurasi Global (main & MyApp)</h4>
+                    <p class="report-paragraph">
+                        Tahap awal dimuali dengan fungsi <code>main()</code> sebagai titik masuk (<i>entry point</i>) eksekusi program yang memanggil fungsi <code>runApp()</code> untuk menjalankan widget utama <code>MyApp</code>. Kelas <code>MyApp</code> diturunkan dari <code>StatelessWidget</code> yang mengonfigurasi kerangka <code>MaterialApp</code> secara global, menonaktifkan banner debug, mengatur tema warna utama aplikasi, serta menetapkan kelas <code>DashboardScreen</code> sebagai halaman awal penayangan antarmuka.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul1_main.png" alt="Snippet Kode Main & MyApp" class="carbon-img">
+                        <p class="text-muted fst-italic small">Snippet 1. Konfigurasi Fungsi Utama dan MyApp</p>
+                    </div>
+
+                    <h4 class="report-subtitle">2. Perancangan Halaman Utama (DashboardScreen & Scaffold)</h4>
+                    <p class="report-paragraph">
+                        Struktur tampilan layar utama dibangun melalui kelas <code>DashboardScreen</code> yang menggunakan komponen <code>Scaffold</code>. Di dalam elemen ini, terdapat bilah atas aplikasi (<code>AppBar</code>) bertuliskan judul praktikum serta bagian tubuh (<code>body</code>) yang membungkus komponen <code>Padding</code> dan <code>Column</code>. Wadah kolom ini berfungsi menata jarak serta menyusun komponen turunan secara vertikal, yang mencakup komponen sapaan pengguna dan kartu saldo.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul1_dashboard.png" alt="Snippet Kode DashboardScreen" class="carbon-img">
+                        <p class="text-muted fst-italic small">Snippet 2. Struktur Tampilan DashboardScreen</p>
+                    </div>
+
+                    <h4 class="report-subtitle">3. Pembuatan Widget Sapaan (GreetingWidget)</h4>
+                    <p class="report-paragraph">
+                        Komponen sapaan pengguna dirancang menggunakan kelas turunan <code>StatelessWidget</code> karena sifatnya yang statis. Komponen ini memanfaatkan widget <code>Row</code> untuk menyusun elemen secara horizontal, yang memuat avatar lingkaran (<code>CircleAvatar</code>) untuk ikon profil dan komponen <code>Column</code> guna menyusun teks sapaan utama serta sub-teks secara vertikal dengan perataan sisi kiri yang rapi.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/Widget Sapaan.png" alt="Snippet Kode GreetingWidget" class="carbon-img">
+                        <p class="text-muted fst-italic small">Snippet 3. Implementasi GreetingWidget</p>
+                    </div>
+
+                    <h4 class="report-subtitle">4. Pembuatan Kartu Saldo & Interaktivitas (BalanceCardWidget)</h4>
+                    <p class="report-paragraph">
+                        Komponen kartu saldo diimplementasikan menggunakan <code>StatefulWidget</code> karena membutuhkan pengelolaan status data internal yang dapat berubah. Kelas state pendukung memuat variabel boolean <code>_isBalanceVisible</code> serta fungsi pengendali <code>_toggleVisibility()</code> yang memanfaatkan metode <code>setState()</code> untuk membalik status visibilitas nominal saat tombol ikon mata ditekan[cite: 4]. Operator ternary digunakan pada teks nominal untuk menampilkan saldo asli atau menyensornya, serta disertakan teks informasi nomor rekening sebagai tambahan elemen tugas.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul1_balance.png" alt="Snippet Kode BalanceCardWidget" class="carbon-img">
+                        <p class="text-muted fst-italic small">Snippet 4. Kartu Saldo dan Pengelolaan State</p>
+                    </div>
+
+                    <h4 class="report-subtitle">5. Pembahasan Tugas Modul 1</h4>
+                    <p class="report-paragraph">
+                        Pengerjaan latihan mencakup modifikasi warna latar belakang kartu saldo menjadi warna teal serta penambahan baris teks informasi nomor rekening (<code>No. Rekening: 1234-5678</code>) secara statis di bawah nominal saldo.
+                    </p>
+
+                   <div class="text-center">
+                            <img src="../images/prak1-1.png" alt="Hasil Output Modul 1" class="report-image" style="max-width: 60%; display: block; margin: 0 auto;">
+                            <p class="text-muted fst-italic">Gambar 1. Hasil Tampilan Antarmuka Modul 1</p>
+                        </div>
+
+                    <h3 class="report-heading">D. Kesimpulan</h3>
+                    <p class="report-paragraph">
+                        Modul pertama berhasil diselesaikan dengan baik melalui pemahaman runut dari struktur <code>main</code> hingga penerapan fungsi <code>setState()</code> pada komponen dinamis.
+                    </p>
+                </div>
+
+
+                <!-- ======================================================== -->
+                <!-- MODUL 2                                                  -->
+                <!-- ======================================================== -->
+                <div class="module-card-section">
+                    <h2 class="module-card-title">
+                        <i class="fas fa-layer-group me-2"></i> Modul II: Layouting & Styling (Row, Column, Container, & ListTile)
+                    </h2>
+
+                    <h3 class="report-heading">A. Pendahuluan</h3>
+                    <p class="report-paragraph">
+                        Pengembangan antarmuka aplikasi mobile yang kompleks memerlukan pengorganisasian tata letak elemen secara terstruktur. Modul kedua mengeksplorasi pemanfaatan widget penata letak utama seperti <code>Row</code> untuk penyusunan komponen secara horizontal dan <code>Column</code> untuk pengaturan elemen secara vertikal.
+                    </p>
+                    <p class="report-paragraph">
+                        Pengelolaan wadah penampil data riwayat transaksi didukung melalui widget bawaan material design yaitu <code>ListTile</code>. Komponen ini menyediakan baris terstandarisasi untuk elemen ikon, teks informasi, hingga nominal transaksi.
+                    </p>
+
+                    <h3 class="report-heading">B. Tujuan</h3>
+                    <ul class="report-list">
+                        <li>Menerapkan widget <code>Row</code> untuk menata deretan tombol aksi secara horizontal.</li>
+                        <li>Menerapkan widget <code>Column</code> dan <code>ListTile</code> untuk menyusun daftar transaksi.</li>
+                        <li>Mengatur penataan jarak padding, margin, serta warna dekorasi komponen.</li>
+                    </ul>
+
+                    <h3 class="report-heading">C. Langkah Kerja</h3>
+                    <p class="report-paragraph">
+                         Berikut adalah langkah-langkah dari implementasi kode program yang digunakan dalam praktikum modul kedua:
+                    </p>
+
+                    <h4 class="report-subtitle">1. Integrasi Dashboard & Struktur Halaman</h4>
+                    <p class="report-paragraph">
+                        Serupa dengan modul sebelumnya, program diawali dengan fungsi eksekusi <code>main()</code> dan kelas <code>MyApp</code>. Pada kelas <code>DashboardScreen</code>, struktur tampilan diperluas dengan membungkus seluruh elemen di dalam widget <code>SingleChildScrollView</code>, <code>Padding</code>, dan <code>Column</code> agar tata letak bersifat fleksibel dan dapat digulir secara vertikal tanpa galat limpahan piksel (<i>overflow</i>).
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul2_dashboard.png" alt="Snippet Kode Dashboard Modul 2" class="carbon-img">
+                        <p class="text-muted fst-italic small">Snippet 5. Integrasi Dashboard Scrollable Modul 2</p>
+                    </div>
+
+                    <h4 class="report-subtitle">2. Menyusun Tombol Aksi Cepat (ActionButtonsWidget)</h4>
+                    <p class="report-paragraph">
+                        Tombol aksi transaksi (pemasukan, pengeluaran, transfer) ditata horizontal menggunakan widget <code>Row</code> dengan properti <code>MainAxisAlignment.spaceEvenly</code>. Fungsi bantu modular <code>_buildActionButton</code> dipanggil untuk mendekorasi ikon di dalam <code>Container</code> bersudut melengkung.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul2_buttons.png" alt="Snippet Kode ActionButtonsWidget" class="carbon-img">
+                        <p class="text-muted fst-italic small">Snippet 6. Implementasi Tombol Aksi Cepat (Row)</p>
+                    </div>
+
+                    <h4 class="report-subtitle">3. Menyusun Riwayat Transaksi (RecentTransactionsWidget)</h4>
+                    <p class="report-paragraph">
+                        Daftar riwayat transaksi disusun menggunakan struktur <code>Column</code> dan kerangka <code>Card</code>. Di dalamnya, komponen <code>ListTile</code> disusun berurutan dengan pemisah garis <code>Divider</code>, di mana atribut <code>leading</code>, <code>title</code>, <code>subtitle</code>, dan <code>trailing</code> diatur untuk menampilkan data riwayat transaksi secara informatif.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul2_transactions.png" alt="Snippet Kode RecentTransactionsWidget" class="carbon-img">
+                        <p class="text-muted fst-italic small">Snippet 7. Implementasi Riwayat Transaksi (ListTile)</p>
+                    </div>
+
+                    <h4 class="report-subtitle">4. Pembahasan Tugas Modul 2</h4>
+                    <p class="report-paragraph">
+                        Pengerjaan latihan meliputi penyesuaian styling pewarnaan teks nominal secara konsisten (merah untuk pengeluaran, hijau untuk pemasukan) serta penambahan item transaksi fiktif baru ke dalam daftar riwayat.
+                    </p>
+
+                    <div class="text-center">
+                            <img src="../images/prak2-2.png" alt="Hasil Output Modul 1" class="report-image" style="max-width: 60%; display: block; margin: 0 auto;">
+                            <p class="text-muted fst-italic">Gambar 2. Hasil Tampilan Antarmuka Modul 2</p>
+                        </div>
+
+                    <h3 class="report-heading">D. Kesimpulan</h3>
+                    <p class="report-paragraph">
+                        Praktikum modul kedua berhasil diselesaikan dengan menerapkan teknik penataan tata letak berbasis <code>Row</code>, <code>Column</code>, dan <code>ListTile</code> yang terintegrasi secara rapi pada aplikasi.
+                    </p>
+                </div>
+
+                <!-- TOMBOL NAVIGASI -->
+
+                <div class="back-btn">
+                    <a href="../report.html" class="btn btn-gold medieval-btn">
+                        <i class="fas fa-arrow-left"></i> Back to Reports
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="custom-footer mt-5 pt-4 pb-2">
+        <div class="container text-center py-2">
+            <p class="mb-0 gold-light-text">&copy; 2026 dvnmanda — All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
