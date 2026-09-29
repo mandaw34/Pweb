@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dvnmanda – Report Detail Modul 3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <style>
+        .report-detail-hero {
+            padding-top: 130px;
+            padding-bottom: 70px;
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon-light) 45%, #2a1b1b 100%);
+            border-bottom: 3px solid var(--gold);
+        }
+        .report-content-section {
+            padding-top: 70px;
+            padding-bottom: 100px;
+        }
+        .report-wrapper {
+            background-color: #fdfbf7;
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        }
+        .module-card-section {
+            background-color: #ffffff;
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .module-card-title {
+            color: #5c1d1d;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+        }
+        .report-heading {
+            color: #5c1d1d;
+            font-weight: 700;
+            margin-top: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--gold);
+            padding-left: 15px;
+            font-size: 1.3rem;
+        }
+        .report-paragraph {
+            color: #2b2b2b;
+            line-height: 2;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        .report-list li {
+            color: #2b2b2b;
+            margin-bottom: 12px;
+            line-height: 1.9;
+        }
+        .report-subtitle {
+            color: #5c1d1d;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+        .carbon-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .report-image {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .back-btn {
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .report-wrapper { padding: 30px 20px; }
+            .module-card-section { padding: 20px; }
+            .carbon-img { max-width: 100%; }
+        }
+    </style>
+</head>
+<body class="bg-dark-medieval">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand logo-text" href="../index.html">DVNMANDA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../portofolio.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../report.html">Report</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../kontak.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="report-detail-hero text-center">
+        <div class="container">
+            <h1 class="display-4 gold-text fw-bold">Laporan Praktikum</h1>
+            <p class="lead gold-light-text mt-3">Modul 3: Input Widgets & Forms (Menangkap Data, Dropdown, dan Validasi)</p>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="report-content-section">
+        <div class="container">
+            <div class="report-wrapper">
+
+                <!-- ======================================================== -->
+                <!-- MODUL 3                                                  -->
+                <!-- ======================================================== -->
+                <div class="module-card-section">
+                    <h2 class="module-card-title">
+                        <i class="fas id-card me-2"></i> Modul III: Input Widgets & Forms (Menangkap Data, Dropdown, dan Validasi)
+                    </h2>
+
+                    <h3 class="report-heading">A. Pendahuluan</h3>
+                    <p class="report-paragraph">
+                        Dalam pengembangan aplikasi mobile interaktif, kemampuan untuk menerima, memproses, dan memvalidasi masukan data dari pengguna merupakan aspek fundamental. Modul ketiga ini mempelajari pemanfaatan pilar formulir Flutter yang terdiri dari penggunaan wadah <code>Form</code> beserta kunci global <code>GlobalKey</code> untuk mengelola validasi elemen masukan secara kolektif. 
+                    </p>
+                    <p class="report-paragraph">
+                        Penggunaan komponen seperti <code>TextFormField</code>, pengontrol teks <code>TextEditingController</code>, serta elemen pilihan <code>DropdownButtonFormField</code> memungkinkan pengembang membangun antarmuka pencatatan data yang terstruktur. Selain itu, penerapan fungsi validator secara spesifik berfungsi untuk mencegah masuknya data kosong maupun format yang tidak sesuai sebelum data tersebut diproses lebih lanjut oleh sistem.
+                    </p>
+
+                    <h3 class="report-heading">B. Tujuan</h3>
+                    <ul class="report-list">
+                        <li>Menangkap data teks dari pengguna menggunakan komponen controller</li>
+                        <li>Menerapkan widget pilihan kategori berbasis dropdown secara statis.</li>
+                        <li>Melakukan validasi input secara terintegrasi untuk mencegah data kosong atau kesalahan format.</li>
+                    </ul>
+
+                    <h3 class="report-heading">C. Langkah Kerja</h3>
+                    <p class="report-paragraph">
+                        Berikut adalah langkah-langkah implementasi kode program:
+                    </p>
+
+                    <h4 class="report-subtitle">1. Persiapan State & Controller (AddTransactionScreen)</h4>
+                    <p class="report-paragraph">
+                        Halaman formulir didefinisikan menggunakan <code>StatefulWidget</code> bernama <code>AddTransactionScreen</code> karena status isi formulir, nilai dropdown, serta teks input akan terus berubah seiring interaksi pengguna. Tahap ini mencakup inisialisasi <code>GlobalKey&lt;FormState&gt;</code> untuk mengontrol form, pembuatan <code>TextEditingController</code> untuk judul dan nominal, serta penyiapan data awal kategori pilihan. Metode <code>dispose()</code> juga diterapkan untuk membersihkan controller saat halaman ditutup guna mencegah kebocoran memori (<i>memory leak</i>).
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul3_state.png" alt="Snippet Kode State & Controller Modul 3" class="carbon-img">
+                        <p class="text-muted fst-italic small">Snippet 1. Inisialisasi State, GlobalKey, dan Controller Form</p>
+                    </div>
+
+                    <h4 class="report-subtitle">2. Membuat Kolom Input Teks & Validasi (TextFormField)</h4>
+                    <p class="report-paragraph">
+                        Seluruh elemen masukan dibungkus di dalam widget <code>Form</code> yang dihubungkan dengan kunci global. Komponen <code>TextFormField</code> pertama digunakan untuk judul transaksi dengan pemeriksaan validator kondisi kosong. Komponen kedua digunakan untuk nominal saldo dengan pengaturan tipe kibor angka (<code>TextInputType.number</code>) serta pemeriksaan validasi ganda untuk memastikan data terisi dan berupa angka bulat valid melalui fungsi <code>int.tryParse()</code>.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul3_formfields.png" alt="Snippet Kode TextFormField Modul 3" class="carbon-img">
+                        <p class="text-muted fst-italic small">Snippet 2. Implementasi TextFormField dan Logika Validasi</p>
+                    </div>
+
+                    <h4 class="report-subtitle">3. Integrasi Dropdown Kategori & Tombol Simpan</h4>
+                    <p class="report-paragraph">
+                        Pemilihan kategori transaksi disediakan menggunakan widget <code>DropdownButtonFormField&lt;String&gt;</code> yang memetakan daftar pilihan kategori secara dinamis. Tombol aksi <code>ElevatedButton</code> diletakkan di bagian bawah untuk memicu fungsi <code>_formKey.currentState!.validate()</code>. Jika seluruh data lolos validasi, sistem akan menampilkan pop-up notifikasi berupa <code>SnackBar</code> bertuliskan ringkasan data transaksi yang berhasil disimpan.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul3_dropdown.png" alt="Snippet Kode Dropdown & Button Modul 3" class="carbon-img">
+                        <p class="text-muted fst-italic small">Snippet 3. Dropdown Kategori dan Tombol Eksekusi Validasi</p>
+                    </div>
+
+                    <h4 class="report-subtitle">4. Konfigurasi Titik Masuk Utama (main.dart)</h4>
+                    <p class="report-paragraph">
+                        File utama <code>main.dart</code> dikonfigurasi untuk menjalankan fungsi <code>runApp()</code> yang memuat kelas <code>MyApp</code>. Berdasarkan struktur modul, tema aplikasi disesuaikan menggunakan warna dasar <code>deepPurple</code> dan langsung menetapkan kelas <code>AddTransactionScreen</code> sebagai halaman utama (<i>home</i>) yang ditampilkan saat aplikasi dijalankan.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul3_main.png" alt="Snippet Kode Main Modul 3" class="carbon-img">
+                        <p class="text-muted fst-italic small">Snippet 4. Konfigurasi File Utama main.dart</p>
+                    </div>
+
+                    <h4 class="report-subtitle">5. Hasil Output Tampilan Antarmuka Modul 3</h4>
+                    <p class="report-paragraph">
+                        Berikut adalah hasil tampilan antarmuka form pencatatan transaksi baru beserta fitur validasi input dan komponen dropdown kategori yang telah diuji pada emulator:
+                    </p>
+
+                    <div class="text-center">
+                        <img src="../images/prak3-1.png" alt="Hasil Output Modul 3" class="report-image" style="max-width: 60%; display: block; margin: 0 auto;">
+                        <p class="text-muted fst-italic">Gambar 1. Hasil Tampilan Antarmuka Modul 3</p>
+                    </div>
+
+                    <h3 class="report-heading">D. Kesimpulan</h3>
+                    <p class="report-paragraph">
+                        Praktikum modul ketiga berhasil diselesaikan dengan baik. Penggunaan komponen <code>Form</code>, <code>TextFormField</code>, <code>DropdownButtonFormField</code>, serta pemanfaatan <code>GlobalKey</code> terbukti efektif dalam menangkap serta memvalidasi data masukan pengguna secara aman sebelum diproses lebih lanjut oleh aplikasi.
+                    </p>
+                </div>
+
+                <div class="github-btn-box">
+                    <a href="https://github.com/mandaw34/dvmanda-AplikasiMobile/tree/praktikum-3" target="_blank" class="btn btn-gold medieval-btn">
+                        <i class="fab fa-github"></i> VIEW GITHUB
+                    </a>
+                </div>
+
+                <!-- TOMBOL NAVIGASI -->
+                <div class="back-btn">
+                    <a href="../report.html" class="btn btn-gold medieval-btn">
+                        <i class="fas fa-arrow-left"></i> Back to Reports
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="custom-footer mt-5 pt-4 pb-2">
+        <div class="container text-center py-2">
+            <p class="mb-0 gold-light-text">&copy; 2026 dvnmanda — All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
