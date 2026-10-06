@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dvnmanda – Report Detail Modul 4</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <style>
+        .report-detail-hero {
+            padding-top: 130px;
+            padding-bottom: 70px;
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon-light) 45%, #2a1b1b 100%);
+            border-bottom: 3px solid var(--gold);
+        }
+        .report-content-section {
+            padding-top: 70px;
+            padding-bottom: 100px;
+        }
+        .report-wrapper {
+            background-color: #fdfbf7;
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        }
+        .module-card-section {
+            background-color: #ffffff;
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .module-card-title {
+            color: #5c1d1d;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+        }
+        .report-heading {
+            color: #5c1d1d;
+            font-weight: 700;
+            margin-top: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--gold);
+            padding-left: 15px;
+            font-size: 1.3rem;
+        }
+        .report-paragraph {
+            color: #2b2b2b;
+            line-height: 2;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        .report-list li {
+            color: #2b2b2b;
+            margin-bottom: 12px;
+            line-height: 1.9;
+        }
+        .report-subtitle {
+            color: #5c1d1d;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+        .carbon-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .report-image {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .back-btn {
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .report-wrapper { padding: 30px 20px; }
+            .module-card-section { padding: 20px; }
+            .carbon-img { max-width: 100%; }
+        }
+    </style>
+</head>
+<body class="bg-dark-medieval">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand logo-text" href="../index.html">DVNMANDA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../portofolio.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../report.html">Report</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../kontak.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="report-detail-hero text-center">
+        <div class="container">
+            <h1 class="display-4 gold-text fw-bold">Laporan Praktikum</h1>
+            <p class="lead gold-light-text mt-3">Modul 4: Navigasi & Passing Data (Navigator, Konsep Stack, dan Constructor)</p>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="report-content-section">
+        <div class="container">
+            <div class="report-wrapper">
+
+                <div class="module-card-section">
+                    <h2 class="module-card-title">
+                        <i class="fas id-card me-2"></i> Modul IV: Navigasi & Passing Data (Navigator, Konsep Stack, dan Constructor)
+                    </h2>
+
+                    <h3 class="report-heading">A. Pendahuluan</h3>
+                    <p class="report-paragraph">
+                        Dalam pengembangan aplikasi mobile berbasis Flutter, pengelolaan alur perpindahan antarhalaman dan pengiriman informasi memegang peranan esensial untuk membentuk pengalaman pengguna yang interaktif. Modul keempat ini membahas konsep tumpukan atau <i>stack</i> melalui penggunaan widget <code>Navigator</code>, di mana metode <code>push</code> berfungsi untuk menumpuk halaman baru di atas layar aktif, sedangkan metode <code>pop</code> berperan menutup halaman teratas guna kembali ke layar sebelumnya.
+                    </p>
+                    <p class="report-paragraph">
+                        Selain mekanisme navigasi rute, modul ini juga mengeksplorasi teknik pengiriman data antarhalaman menggunakan <i>constructor</i>. Dengan mendefinisikan variabel berjenis <i>final</i> serta penerapan kata kunci <i>required</i> pada kelas tujuan, aplikasi mampu menerima, mengolah, dan menampilkan data secara dinamis sesuai dengan aksi spesifik yang dilakukan oleh pengguna pada antarmuka.
+                    </p>
+
+                    <h3 class="report-heading">B. Tujuan</h3>
+                    <ul class="report-list">
+                        <li>Menerapkan <code>Navigator.push</code> untuk berpindah ke layar baru.</li>
+                        <li>Menggunakan <code>Navigator.pop</code> untuk menutup layar setelah aksi selesai.</li>
+                        <li>Mengirim data (String, int) antar layar melalui <i>Constructor</i>.</li>
+                    </ul>
+
+                    <h3 class="report-heading">C. Langkah Kerja</h3>
+                    <p class="report-paragraph">
+                        Berikut adalah tahapan implementasi kode program untuk membangun arsitektur navigasi dan pengiriman data terstruktur:
+                    </p>
+
+                    <h4 class="report-subtitle">1. Membuat Halaman Detail Transaksi (TransactionDetailScreen)</h4>
+                    <p class="report-paragraph">
+                        Tahap awal dimulai dengan membuat file baru guna menampung rincian informasi transaksi. Halaman ini dirancang menggunakan kelas <code>StatelessWidget</code> yang mendeklarasikan variabel penampung data bersifat <i>final</i> serta mewajibkan pengisian parameter melalui <i>constructor</i>. Data yang dikirimkan kemudian dirender ke dalam elemen teks antarmuka untuk menampilkan informasi lengkap.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul4_detail.png" alt="Snippet Kode TransactionDetailScreen Modul 4" class="carbon-img">
+                        <p class="text-muted fst-italic small">Snippet 1. Pembuatan Halaman Detail dan Penerima Parameter Constructor</p>
+                    </div>
+
+                    <h4 class="report-subtitle">2. Mengonfigurasi Dashboard & Navigasi Push dengan Data</h4>
+                    <p class="report-paragraph">
+                        Halaman utama atau <i>Dashboard</i> disesuaikan agar tombol aksi dan daftar item transaksi dapat diinteraksikan secara langsung. Pada komponen daftar transaksi, fungsi <code>onTap</code> ditambahkan bersama <code>Navigator.push</code> dan <code>MaterialPageRoute</code> untuk mengarahkan pengguna menuju <code>TransactionDetailScreen</code> sekaligus membawa data spesifik seperti judul, nominal, kategori, dan tanggal.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul4_dashboard.png" alt="Snippet Kode Dashboard Modul 4" class="carbon-img">
+                        <p class="text-muted fst-italic small">Snippet 2. Implementasi Navigasi Push dan Passing Data pada Dashboard</p>
+                    </div>
+
+                    <h4 class="report-subtitle">3. Penerapan Navigasi Pop pada Formulir Transaksi</h4>
+                    <p class="report-paragraph">
+                        Pengembangan dilanjutkan pada file formulir transaksi dari modul sebelumnya untuk mengotomatisasi proses keluar halaman. Ketika tombol simpan ditekan dan seluruh validasi form dinyatakan berhasil, sistem akan menampilkan notifikasi <code>SnackBar</code>, diikuti oleh eksekusi kode <code>Navigator.pop(context)</code> guna menutup form dan mengembalikan pengguna ke halaman <i>Dashboard</i>.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul4_formpop.png" alt="Snippet Kode Form Pop Modul 4" class="carbon-img">
+                        <p class="text-muted fst-italic small">Snippet 3. Eksekusi Navigator.pop setelah Validasi Formulir Sukses</p>
+                    </div>
+
+                    <h4 class="report-subtitle">4. Konfigurasi Titik Masuk Utama (main.dart)</h4>
+                    <p class="report-paragraph">
+                        File utama <code>main.dart</code> dikonfigurasi untuk menjalankan widget <code>MyApp</code> dengan penerapan tema warna dasar merah (<i>Red</i>). Properti <code>home</code> diatur secara langsung untuk memuat kelas <code>DashboardScreen</code> sebagai tampilan antarmuka awal ketika aplikasi pertama kali dieksekusi.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul4_main.png" alt="Snippet Kode Main Modul 4" class="carbon-img">
+                        <p class="text-muted fst-italic small">Snippet 4. Konfigurasi Root Aplikasi pada file main.dart</p>
+                    </div>
+
+                    <h4 class="report-subtitle">5. Hasil Output Tampilan Antarmuka Modul 4</h4>
+                    <p class="report-paragraph">
+                        Berikut adalah hasil uji coba antarmuka aplikasi yang memperlihatkan fungsionalitas perpindahan layar, penambahan tombol kembali otomatis, serta penyesuaian teks detail berdasarkan data baris yang dipilih:
+                    </p>
+
+                    <div class="text-center">
+                        <img src="../images/prak4-1.png" alt="Hasil Output Modul 4" class="report-image" style="max-width: 60%; display: block; margin: 0 auto;">
+                        <p class="text-muted fst-italic">Gambar 1. Hasil Tampilan Halaman Dashboard dan Detail Transaksi</p>
+                    </div>
+
+                    <h3 class="report-heading">D. Tugas & Pembahasan Tambahan</h3>
+                    <p class="report-paragraph">
+                        Pada bagian tugas praktikum modul ini, pengembangan difokuskan pada penambahan fitur input tanggal transaksi menggunakan fungsi <code>showDatePicker</code> serta validasi form agar data wajib terisi sebelum disimpan[cite: 18]. Terkait alur penyimpanan data, secara default pada modul dasar, setelah tombol simpan ditekan aplikasi hanya menjalankan perintah <code>Navigator.pop()</code> dan menampilkan notifikasi <code>SnackBar</code> tanpa memperbarui daftar list di dashboard secara dinamis (sehingga data statis awal tetap berjumlah dua transaksi)[cite: 18].
+                    </p>
+                    <p class="report-paragraph">
+                        Agar pengalaman pengguna menjadi jauh lebih interaktif dan aplikatif, pendekatan yang paling ideal adalah menerapkan manajemen state atau mengirim balik data (<i>passing data back via pop result</i>) dari form pencatatan ke halaman dashboard. Dengan cara ini, setiap kali pengguna memasukkan data baru melalui form, data tersebut akan ditambahkan ke dalam list state dashboard dan langsung muncul sebagai item transaksi baru di bawah riwayat.
+                    </p>
+                    <p class="report-paragraph">
+                        Berikut adalah dokumentasi hasil tangkapan layar (screenshot) dari rangkaian pengujian aplikasi yang mencakup halaman utama dashboard, formulir pencatatan transaksi, serta notifikasi validasi beserta penambahan data baru:
+                    </p>
+
+                    <!-- 3 Screenshot untuk Tugas -->
+                    <div class="row mt-4">
+
+                        <div class="col-md-6 mb-4">
+                            <div class="text-center">
+                                <img src="../images/prak4_task_form.png" alt="Form Catat Transaksi & Validasi" class="report-image">
+                                <p class="text-muted fst-italic small mt-2">Gambar 2. Form Catat Transaksi</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                            <div class="text-center">
+                                <img src="../images/prak4_task_dashboard.png" alt="Tampilan Dashboard Keuangan" class="report-image">
+                                <p class="text-muted fst-italic small mt-2">Gambar 3. Validasi Data</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="report-heading">E. Kesimpulan</h3>
+                    <p class="report-paragraph">
+                        Praktikum modul keempat berhasil diselesaikan dengan baik. Penerapan widget <code>Navigator</code> melalui metode <code>push</code> dan <code>pop</code> terbukti efektif dalam mengatur sistem tumpukan rute layar, sementara pemanfaatan <i>Constructor</i> berhasil memastikan pengiriman data antarhalaman berjalan secara akurat dan terstruktur.
+                    </p>
+                </div>
+
+                <div class="github-btn-box">
+                    <a href="https://github.com/mandaw34/dvmanda-AplikasiMobile/tree/praktikum-4" target="_blank" class="btn btn-gold medieval-btn">
+                        <i class="fab fa-github"></i> VIEW GITHUB
+                    </a>
+                </div>
+
+                <!-- TOMBOL NAVIGASI -->
+                <div class="back-btn">
+                    <a href="../report.html" class="btn btn-gold medieval-btn">
+                        <i class="fas fa-arrow-left"></i> Back to Reports
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="custom-footer mt-5 pt-4 pb-2">
+        <div class="container text-center py-2">
+            <p class="mb-0 gold-light-text">&copy; 2026 dvnmanda — All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
