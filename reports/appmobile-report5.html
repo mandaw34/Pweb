@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dvnmanda – Report Detail Modul 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <style>
+        .report-detail-hero {
+            padding-top: 130px;
+            padding-bottom: 70px;
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon-light) 45%, #2a1b1b 100%);
+            border-bottom: 3px solid var(--gold);
+        }
+        .report-content-section {
+            padding-top: 70px;
+            padding-bottom: 100px;
+        }
+        .report-wrapper {
+            background-color: #fdfbf7;
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        }
+        .module-card-section {
+            background-color: #ffffff;
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .module-card-title {
+            color: #5c1d1d;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+        }
+        .report-heading {
+            color: #5c1d1d;
+            font-weight: 700;
+            margin-top: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--gold);
+            padding-left: 15px;
+            font-size: 1.3rem;
+        }
+        .report-paragraph {
+            color: #2b2b2b;
+            line-height: 2;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        .report-list li {
+            color: #2b2b2b;
+            margin-bottom: 12px;
+            line-height: 1.9;
+        }
+        .report-subtitle {
+            color: #5c1d1d;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+        .carbon-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .report-image {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .back-btn {
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .report-wrapper { padding: 30px 20px; }
+            .module-card-section { padding: 20px; }
+            .carbon-img { max-width: 100%; }
+        }
+    </style>
+</head>
+<body class="bg-dark-medieval">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand logo-text" href="../index.html">DVNMANDA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../portofolio.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../report.html">Report</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../kontak.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="report-detail-hero text-center">
+        <div class="container">
+            <h1 class="display-4 gold-text fw-bold">Laporan Praktikum</h1>
+            <p class="lead gold-light-text mt-3">Modul 5: Arsitektur Navigasi (Named Routes &amp; Bottom Navigation Bar)</p>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="report-content-section">
+        <div class="container">
+            <div class="report-wrapper">
+
+                <div class="module-card-section">
+                    <h2 class="module-card-title">
+                        <i class="fas fa-mobile-screen-button me-2"></i> Modul V: Arsitektur Navigasi (Named Routes &amp; Bottom Navigation Bar)
+                    </h2>
+
+                    <h3 class="report-heading">A. Pendahuluan</h3>
+                    <p class="report-paragraph">
+                        Navigasi merupakan bagian penting dalam pengembangan aplikasi mobile karena membantu pengguna berpindah dari satu halaman ke halaman lain secara teratur. Pada Modul Praktikum V, pembahasan berfokus pada penggunaan <i>Named Routes</i> dan <code>BottomNavigationBar</code> di Flutter. Named Routes digunakan untuk mengatur rute halaman melalui konfigurasi terpusat pada <code>MaterialApp</code>, sedangkan Bottom Navigation Bar menyediakan menu di bagian bawah layar untuk mengakses halaman utama seperti Dashboard, Riwayat, dan Profil.
+                    </p>
+                    <p class="report-paragraph">
+                        Pada pengembangan project Expense Tracker, konsep tersebut diterapkan dan dikembangkan lebih lanjut bersama fitur login, register, serta penyimpanan data transaksi menggunakan database lokal. Dengan demikian, aplikasi tidak hanya menampilkan perpindahan halaman, tetapi juga dapat menyesuaikan informasi berdasarkan pengguna yang sedang masuk dan menyimpan transaksi yang dimasukkan.
+                    </p>
+
+                    <h3 class="report-heading">B. Tujuan</h3>
+                    <ul class="report-list">
+                        <li>Menerapkan <i>Named Routes</i> untuk navigasi terpusat dan rapi.</li>
+                        <li>Membangun menu bawah (<i>BottomNavigationBar</i>) seperti aplikasi modern.</li>
+                        <li>Mengintegrasikan Dashboard, Riwayat, dan Profil dalam satu wadah.</li>
+                    </ul>
+
+                    <h3 class="report-heading">C. Langkah Kerja Praktikum</h3>
+                    <p class="report-paragraph">
+                        Langkah praktikum mengikuti urutan pada Modul V, yaitu mengatur rute di file <code>main.dart</code>, membuat wadah tab pada <code>main_screen.dart</code>, lalu menyesuaikan Dashboard agar terhubung dengan alur navigasi. Kode yang ditampilkan pada bagian ini berasal dari project Expense Tracker yang telah dikembangkan.
+                    </p>
+
+                    <h4 class="report-subtitle">1. Konfigurasi Named Routes pada <code>main.dart</code></h4>
+                    <p class="report-paragraph">
+                        File <code>main.dart</code> merupakan titik masuk aplikasi Flutter. Pada project ini, <code>MaterialApp</code> menggunakan <code>initialRoute: '/login'</code> sehingga halaman login ditampilkan pertama kali. Rute <code>/login</code> dan <code>/register</code> didaftarkan pada properti <code>routes</code>. Halaman utama dan form transaksi tidak didaftarkan sebagai rute statis karena keduanya membutuhkan data <code>userEmail</code> yang diteruskan secara dinamis setelah pengguna berhasil login.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul5_main.png" alt="Kode main.dart Modul 5" class="carbon-img">
+                        <p class="text-muted fst-italic small">Kode 1. Konfigurasi MaterialApp dan Named Routes pada main.dart</p>
+                    </div>
+
+                    <h4 class="report-subtitle">2. Membuat Penampung Tab pada <code>main_screen.dart</code></h4>
+                    <p class="report-paragraph">
+                        File <code>main_screen.dart</code> menjadi wadah untuk tiga halaman utama aplikasi, yaitu Dashboard, Riwayat, dan Profil. Kelas <code>MainScreen</code> menggunakan <code>StatefulWidget</code> karena indeks tab aktif dapat berubah saat pengguna memilih menu. Variabel <code>_selectedIndex</code> menyimpan tab yang sedang dipilih, sedangkan daftar <code>_pages</code> berisi widget halaman yang menerima <code>userEmail</code>. Ketika salah satu item BottomNavigationBar ditekan, fungsi <code>_onItemTapped</code> memperbarui indeks melalui <code>setState</code>, sehingga isi halaman ikut berubah.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul5_main_screen.png" alt="Kode main_screen.dart Modul 5" class="carbon-img">
+                        <p class="text-muted fst-italic small">Kode 2. Pengaturan Tab Dashboard, Riwayat, dan Profil</p>
+                    </div>
+
+                    <h4 class="report-subtitle">3. Penyesuaian Tambahan pada <code>dashboard_screen.dart</code></h4>
+                    <p class="report-paragraph">
+                        Selain langkah inti pada modul, Dashboard pada project akhir dikembangkan agar mengambil saldo dan daftar transaksi dari database lokal berdasarkan email pengguna. Data saldo ditampilkan sebagai ringkasan keuangan, sedangkan daftar transaksi menampilkan catatan terbaru. Tombol tambah transaksi membuka <code>AddTransactionScreen</code> sambil meneruskan email pengguna. Setelah form mengembalikan hasil berhasil, Dashboard memuat ulang data agar perubahan langsung terlihat tanpa pengguna harus membuka ulang aplikasi.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul5_dashboard_tambahan.png" alt="Kode tambahan Dashboard pada project Expense Tracker" class="carbon-img">
+                        <p class="text-muted fst-italic small">Kode 3. Tambahan pengambilan data, ringkasan saldo, dan navigasi ke form transaksi</p>
+                    </div>
+
+                    <h3 class="report-heading">D. Latihan / Tugas Individu</h3>
+                    <p class="report-paragraph">
+                        Pada Modul V, tugas individu yang diberikan adalah membuat halaman riwayat transaksi, membuat halaman profil yang berisi avatar, nama, email, dan tombol logout, serta membuat halaman login dengan kolom email dan password. Saat tombol login ditekan, aplikasi diarahkan ke halaman utama dan menampilkan informasi pengguna. Pada project ini, bagian tersebut dikembangkan dengan mengambil data transaksi berdasarkan email dan menambahkan alur autentikasi lokal.
+                    </p>
+
+                    <h4 class="report-subtitle">1. Halaman Login — <code>login_screen.dart</code></h4>
+                    <p class="report-paragraph">
+                        File <code>login_screen.dart</code> menyediakan form untuk memasukkan email dan password. Data yang diisi diperiksa melalui fungsi login pada database helper. Jika kredensial cocok, pengguna diarahkan ke <code>MainScreen</code> dengan membawa email akun agar Dashboard, Riwayat, dan Profil dapat menampilkan data milik pengguna tersebut.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul5_login.png" alt="Kode login_screen.dart" class="carbon-img">
+                        <p class="text-muted fst-italic small">Kode 4. Form login dan alur menuju halaman utama</p>
+                    </div>
+
+                    <h4 class="report-subtitle">2. Halaman Riwayat — <code>history_screen.dart</code></h4>
+                    <p class="report-paragraph">
+                        File <code>history_screen.dart</code> menampilkan daftar transaksi yang tersimpan untuk akun yang sedang digunakan. Data diambil melalui <code>DatabaseHelper</code> dengan parameter email pengguna. Halaman ini melengkapi menu Riwayat pada BottomNavigationBar sehingga pengguna dapat melihat catatan transaksi di luar ringkasan transaksi terbaru yang ditampilkan pada Dashboard.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul5_history.png" alt="Kode history_screen.dart" class="carbon-img">
+                        <p class="text-muted fst-italic small">Kode 5. Pengambilan dan penampilan daftar riwayat transaksi</p>
+                    </div>
+
+                    <h4 class="report-subtitle">3. Halaman Profil — <code>profile_screen.dart</code></h4>
+                    <p class="report-paragraph">
+                        File <code>profile_screen.dart</code> menampilkan informasi akun pengguna, termasuk email, serta menyediakan tombol logout. Ketika logout dipilih, pengguna keluar dari halaman utama dan kembali ke alur login. Halaman ini dihubungkan sebagai tab ketiga pada <code>MainScreen</code>.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul5_profile.png" alt="Kode profile_screen.dart" class="carbon-img">
+                        <p class="text-muted fst-italic small">Kode 6. Tampilan profil dan tombol logout</p>
+                    </div>
+
+                    <h3 class="report-heading">E. Project Akhir dan Integrasi</h3>
+                    <p class="report-paragraph">
+                        Project akhir menggabungkan hasil praktikum Modul 1 sampai Modul 5 menjadi satu aplikasi. Instruksi project meminta agar bagian yang sebelumnya hanya berupa UI, navigasi, atau data statis dilengkapi dengan penyimpanan lokal, serta ditambahkan form login dan register. Pada Expense Tracker, data akun dan transaksi disimpan menggunakan SQLite melalui package <code>sqflite</code>, sementara perpindahan halaman menghubungkan form autentikasi dengan menu utama.
+                    </p>
+
+                    <h4 class="report-subtitle">1. Halaman Register — <code>register_screen.dart</code></h4>
+                    <p class="report-paragraph">
+                        File <code>register_screen.dart</code> menyediakan form pendaftaran akun baru. Informasi yang dimasukkan diteruskan ke fungsi registrasi pada <code>DatabaseHelper</code> untuk disimpan secara lokal. Halaman ini diakses melalui rute <code>/register</code> yang sudah didaftarkan pada <code>main.dart</code>, sehingga pengguna baru dapat membuat akun sebelum login.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul5_register.png" alt="Kode register_screen.dart" class="carbon-img">
+                        <p class="text-muted fst-italic small">Kode 7. Form pendaftaran akun pengguna</p>
+                    </div>
+
+                    <h4 class="report-subtitle">2. Form Tambah Transaksi — <code>add_transaction_screen.dart</code></h4>
+                    <p class="report-paragraph">
+                        File <code>add_transaction_screen.dart</code> digunakan untuk memasukkan transaksi baru. Form menyediakan isian judul, nominal, dan jenis transaksi, disertai validasi agar data yang diperlukan tidak kosong atau tidak valid. Setelah data disimpan melalui <code>DatabaseHelper</code>, halaman mengembalikan hasil ke Dashboard agar ringkasan saldo dan daftar transaksi dapat diperbarui.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul5_add_transaction.png" alt="Kode add_transaction_screen.dart" class="carbon-img">
+                        <p class="text-muted fst-italic small">Kode 8. Form input dan penyimpanan transaksi</p>
+                    </div>
+
+                    <h4 class="report-subtitle">3. Halaman Detail Transaksi — <code>transaction_detail_screen.dart</code></h4>
+                    <p class="report-paragraph">
+                        File <code>transaction_detail_screen.dart</code> disiapkan sebagai halaman untuk menampilkan rincian transaksi tertentu. Namun, pada versi project yang didokumentasikan, halaman ini belum terhubung ke alur navigasi utama dari daftar transaksi. Karena itu, file ini dicantumkan sebagai bagian kode project, bukan sebagai fitur yang sudah terintegrasi penuh pada alur penggunaan aplikasi.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul5_transaction_detail.png" alt="Kode transaction_detail_screen.dart" class="carbon-img">
+                        <p class="text-muted fst-italic small">Kode 9. File halaman detail transaksi</p>
+                    </div>
+
+                    <h4 class="report-subtitle">4. Pengelolaan Database Lokal — <code>database_helper.dart</code></h4>
+                    <p class="report-paragraph">
+                        File <code>database_helper.dart</code> menjadi penghubung antara aplikasi dan database SQLite. File ini mengatur pembuatan database serta tabel pengguna dan transaksi, proses registrasi dan login, penambahan transaksi, pengambilan riwayat, dan perhitungan saldo. Dengan penyimpanan lokal ini, data yang dimasukkan tidak hanya berada pada tampilan sementara, tetapi disimpan di perangkat untuk digunakan kembali oleh halaman aplikasi.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul5_database_helper.png" alt="Kode database_helper.dart" class="carbon-img">
+                        <p class="text-muted fst-italic small">Kode 10. Operasi database lokal untuk akun dan transaksi</p>
+                    </div>
+
+                    <h4 class="report-subtitle">5. Konfigurasi Dependency — <code>pubspec.yaml</code></h4>
+                    <p class="report-paragraph">
+                        File <code>pubspec.yaml</code> mengatur informasi package dan dependency yang digunakan project. Pada aplikasi ini, dependency utama yang berkaitan dengan penyimpanan data adalah <code>sqflite</code> dan <code>path</code>, sedangkan <code>cupertino_icons</code> menyediakan ikon. File ini juga menyatakan versi SDK Dart yang didukung serta konfigurasi penggunaan Material Design.
+                    </p>
+                    
+
+                    <h4 class="report-subtitle">6. Hasil Tampilan Aplikasi</h4>
+                    <p class="report-paragraph">
+                        Berikut disediakan enam tempat untuk menampilkan hasil screenshot aplikasi Expense Tracker. Ganti setiap gambar contoh dengan screenshot aktual dari aplikasi yang telah dijalankan.
+                    </p>
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-4">
+                            <div class="text-center">
+                                <img src="../images/prak5-1.png" alt="Screenshot halaman Login" class="report-image">
+                                <p class="text-muted fst-italic small mt-2">Gambar 1. Halaman Login</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="text-center">
+                                <img src="../images/prak5-2.png" alt="Screenshot halaman Register" class="report-image">
+                                <p class="text-muted fst-italic small mt-2">Gambar 2. Halaman Register</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="text-center">
+                                <img src="../images/prak5-3.png" alt="Screenshot halaman Dashboard" class="report-image">
+                                <p class="text-muted fst-italic small mt-2">Gambar 3. Halaman Dashboard</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="text-center">
+                                <img src="../images/prak5-4.png" alt="Screenshot form tambah transaksi" class="report-image">
+                                <p class="text-muted fst-italic small mt-2">Gambar 4. Form Tambah Transaksi</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="text-center">
+                                <img src="../images/prak5-5.png" alt="Screenshot halaman Riwayat" class="report-image">
+                                <p class="text-muted fst-italic small mt-2">Gambar 5. Halaman Riwayat Transaksi</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="text-center">
+                                <img src="../images/prak5-6.png" alt="Screenshot halaman Profil" class="report-image">
+                                <p class="text-muted fst-italic small mt-2">Gambar 6. Halaman Profil</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="report-heading">F. Kesimpulan</h3>
+                    <p class="report-paragraph">
+                        Praktikum Modul V menerapkan Named Routes untuk mengatur navigasi awal aplikasi dan BottomNavigationBar untuk menyatukan akses ke Dashboard, Riwayat, dan Profil. Pada project akhir Expense Tracker, penerapan tersebut dikembangkan dengan alur login dan register, pengiriman email pengguna ke halaman utama, serta penyimpanan akun dan transaksi menggunakan SQLite. Dengan integrasi ini, aplikasi memiliki navigasi yang lebih terstruktur dan dapat menyimpan serta menampilkan data transaksi pengguna secara lokal.
+                    </p>
+                </div>
+
+                <div class="d-flex justify-content-center gap-3 github-btn-box flex-wrap">
+                    <a href="https://drive.google.com/drive/folders/1uVj5P9DU7-qdnXDqFP8vBveG6I28vfBb" target="_blank" rel="noopener noreferrer" class="btn btn-gold medieval-btn">
+                        <i class="fab fa-google-drive"></i> OPEN GOOGLE DRIVE
+                    </a>
+                    <a href="https://github.com/mandaw34/dvmanda-AplikasiMobile/tree/praktikum-5" target="_blank" rel="noopener noreferrer" class="btn btn-gold medieval-btn">
+                        <i class="fab fa-github"></i> VIEW GITHUB
+                    </a>
+                </div>
+
+                <!-- TOMBOL NAVIGASI -->
+                <div class="back-btn">
+                    <a href="../report.html" class="btn btn-gold medieval-btn">
+                        <i class="fas fa-arrow-left"></i> Back to Reports
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="custom-footer mt-5 pt-4 pb-2">
+        <div class="container text-center py-2">
+            <p class="mb-0 gold-light-text">&copy; 2026 dvnmanda — All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
