@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dvnmanda – Report Detail Modul 6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <style>
+        .report-detail-hero {
+            padding-top: 130px;
+            padding-bottom: 70px;
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon-light) 45%, #2a1b1b 100%);
+            border-bottom: 3px solid var(--gold);
+        }
+        .report-content-section {
+            padding-top: 70px;
+            padding-bottom: 100px;
+        }
+        .report-wrapper {
+            background-color: #fdfbf7;
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        }
+        .module-card-section {
+            background-color: #ffffff;
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .module-card-title {
+            color: #5c1d1d;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+        }
+        .report-heading {
+            color: #5c1d1d;
+            font-weight: 700;
+            margin-top: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--gold);
+            padding-left: 15px;
+            font-size: 1.3rem;
+        }
+        .report-paragraph {
+            color: #2b2b2b;
+            line-height: 2;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        .report-list li {
+            color: #2b2b2b;
+            margin-bottom: 12px;
+            line-height: 1.9;
+        }
+        .report-subtitle {
+            color: #5c1d1d;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+        .carbon-img {
+    max-width: 60%; /* Sebelumnya 80%, kamu kecilkan jadi 60% atau sesuai selera */
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid var(--gold);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.report-image {
+    max-width: 70%; /* Batasi lebarnya misal 70% dari container */
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    border: 2px solid var(--gold);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+        }
+        .table-custom {
+            border: 1px solid var(--gold);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .table-custom th {
+            background-color: #5c1d1d;
+            color: #fff;
+            font-family: 'Cinzel', serif;
+        }
+        .back-btn {
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .report-wrapper { padding: 30px 20px; }
+            .module-card-section { padding: 20px; }
+            .carbon-img { max-width: 100%; }
+        }
+    </style>
+</head>
+<body class="bg-dark-medieval">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand logo-text" href="../index.html">DVNMANDA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../portofolio.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../report.html">Report</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../kontak.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="report-detail-hero text-center">
+        <div class="container">
+            <h1 class="display-4 gold-text fw-bold">Laporan Praktikum</h1>
+            <p class="lead gold-light-text mt-3">Modul 6: State Management pada Aplikasi ResepKu (setState() dan Provider)</p>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="report-content-section">
+        <div class="container">
+            <div class="report-wrapper">
+
+                <div class="module-card-section">
+                    <h2 class="module-card-title">
+                        <i class="fas id-card me-2"></i> Modul VI: State Management (setState() dan Provider)
+                    </h2>
+
+                    <!-- A. PENDAHULUAN -->
+                    <h3 class="report-heading">A. Pendahuluan</h3>
+                    <p class="report-paragraph">
+                        State management merupakan aspek krusial dalam pengembangan aplikasi mobile berbasis Flutter. State didefinisikan sebagai data yang dapat berubah selama siklus hidup aplikasi berjalan dan secara langsung memengaruhi tampilan antarmuka (UI). Pada Modul Praktikum VI ini, pembahasan difokuskan pada pengelolaan state lokal menggunakan <code>setState()</code> pada Stateful Widget untuk fitur jumlah porsi, serta pengelolaan state global menggunakan package <code>provider</code> (menggunakan <code>ChangeNotifier</code> dan <code>MultiProvider</code>) untuk fitur daftar resep favorit, badge, dan halaman Favorit secara terpusat.
+                    </p>
+
+                    <!-- B. TUJUAN -->
+                    <h3 class="report-heading">B. Tujuan</h3>
+                    <ul class="report-list">
+                        <li>Membuat state lokal dengan Stateful Widget dan <code>setState()</code> pada fitur jumlah porsi di halaman detail.</li>
+                        <li>Menjelaskan keterbatasan state lokal ketika satu data dibutuhkan secara bersamaan oleh banyak widget dan halaman.</li>
+                        <li>Membuat state global dengan package <code>provider</code> (ChangeNotifier dan MultiProvider) pada fitur resep favorit.</li>
+                        <li>Membaca state global menggunakan <code>context.watch</code>, <code>context.read</code>, dan <code>Consumer</code> di berbagai halaman.</li>
+                    </ul>
+
+                    <!-- 1. CHECKPOINT 1 (BAGIAN A) -->
+                    <h3 class="report-heading">1. Checkpoint 1 (Bagian A): State Lokal setState()</h3>
+                    <p class="report-paragraph">
+                        Pada bagian ini, dibuat halaman detail resep yang menerapkan state lokal menggunakan <code>StatefulWidget</code> dan <code>setState()</code> untuk mengatur jumlah porsi serta menghitung total kalori secara dinamis.
+                    </p>
+
+                    <div class="text-center mt-3">
+                        <img src="../images/prak6_checkpoint1.png" alt="Checkpoint 1 Halaman Detail Porsi 6" class="report-image">
+                        <p class="text-muted fst-italic small mt-2"> Checkpoint 1: Halaman detail Classic Margherita Pizza dengan porsi 6 (1800 kkal) dan footer identitas</p>
+                    </div>
+
+                    <p class="report-paragraph">
+                        <strong>Analisis Tombol Minus Tidak Aktif saat Porsi Bernilai 1:</strong><br>
+                        Tombol minus (<code>-</code>) dikontrol melalui properti <code>onPressed</code>. Potongan kode berikut yang menyebabkan tombol tersebut menjadi nonaktif ketika porsi bernilai 1:
+                    </p>
+
+                    <div class="text-center">
+                        <img src="../images/carbon_modul6_porsi_code.png" alt="Kode onPressed porsi" class="carbon-img">
+                        <p class="text-muted fst-italic small">Potongan Kode 1. Logika onPressed porsi > 1 pada detail_page.dart</p>
+                    </div>
+                    <p class="report-paragraph">
+                        Ketika <code>_servings > 1</code> bernilai <code>true</code>, tombol memanggil fungsi <code>_removeServing</code> (aktif). Namun, saat porsi bernilai 1, kondisi tersebut menjadi <code>false</code> sehingga nilai <code>onPressed</code> diset ke <code>null</code>, yang secara otomatis membuat tombol nonaktif (berwarna abu-abu).
+                    </p>
+                    
+
+                    <!-- 2. PENGAMATAN BAGIAN B -->
+                    <h3 class="report-heading">2. Pengamatan Bagian B: Eksperimen State Lokal</h3>
+                    <p class="report-paragraph">
+                        Berikut adalah jawaban dari tiga pertanyaan analisis terkait eksperimen penyimpanan status favorit menggunakan state lokal pada masing-masing tile:
+                    </p>
+                    <ul class="report-list">
+                        <li>
+                            <strong>a. Apakah ikon hati berubah? Mengapa?</strong><br>
+                            Ya, ikon hati berubah warna menjadi merah karena fungsi <code>setState(() => isFavorite = !isFavorite)</code> memicu pembaruan state lokal dan membangun ulang <i>(rebuild)</i> widget tile terkait.
+                        </li>
+                        <li>
+                            <strong>b. Coba tampilkan jumlah resep favorit di judul AppBar HomePage. Apakah hal itu dapat dilakukan? Di class mana data isFavorite berada, dan apakah HomePage dapat membacanya?</strong><br>
+                            Hal tersebut tidak dapat dilakukan dengan mudah. Variabel <code>isFavorite</code> berada di dalam class privat <code>RecipeTileState</code>, sehingga widget <code>HomePage</code> selaku induk tidak dapat mengakses atau membaca state privat dari anak widgetnya secara langsung.
+                        </li>
+                        <li>
+                            <strong>c. Buka halaman detail dari resep yang sudah difavoritkan. Bagaimana halaman detail dapat mengetahui bahwa resep tersebut favorit?</strong><br>
+                            Halaman detail tidak dapat mengetahuinya (ikon hati tetap kosong), karena status favorit tersebut hanya disimpan secara lokal dan terisolasi di dalam <code>RecipeTile</code>, sehingga tidak terbawa saat berpindah halaman.
+                        </li>
+                    </ul>
+
+                    <!-- 3. TABEL UJI LANGKAH C.7 & CHECKPOINT 2 -->
+                    <h3 class="report-heading">3. Tabel Uji Langkah C.7 & Checkpoint 2: State Global Provider</h3>
+                    <p class="report-paragraph">
+                        Berikut adalah tabel pengujian skenario interaksi fitur resep favorit menggunakan <code>FavoriteProvider</code>. Kolom status pembuktian disajikan menggunakan tangkapan layar <i>(screenshot)</i> pada Checkpoint 2:
+                    </p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-custom text-center align-middle">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Skenario Pengujian</th>
+                                    <th>Hasil yang Diharapkan</th>
+                                    <th>Kesesuaian</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Tap ikon hati pada Margherita dan Alfredo di Home</td>
+                                    <td>Ikon berwarna merah, badge menunjukkan angka 2</td>
+                                    <td><img src="../images/prak6_scen1.png" alt="Skenario 1" class="img-fluid rounded" style="max-width: 150px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Buka detail Margherita</td>
+                                    <td>Ikon hati di AppBar terisi (merah)</td>
+                                    <td><img src="../images/prak6_scen2.png" alt="Skenario 2" class="img-fluid rounded" style="max-width: 150px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Di halaman detail, tap ikon hati, lalu kembali ke Home</td>
+                                    <td>Ikon Margherita kosong, badge menunjukkan angka 1</td>
+                                    <td><img src="../images/prak6_scen3.png" alt="Skenario 3" class="img-fluid rounded" style="max-width: 150px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Tap badge di AppBar</td>
+                                    <td>Halaman Favorit hanya berisi resep Alfredo</td>
+                                    <td><img src="../images/prak6_scen4.png" alt="Skenario 4" class="img-fluid rounded" style="max-width: 150px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Hapus Alfredo dari halaman Favorit, lalu kembali</td>
+                                    <td>Muncul pesan "Belum ada resep favorit", badge hilang</td>
+                                    <td><img src="../images/prak6_scen5.png" alt="Skenario 5" class="img-fluid rounded" style="max-width: 150px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Ubah porsi menjadi 2, kembali ke Home, buka lagi resep yang sama</td>
+                                    <td>Porsi kembali ke nilai awal (karena state lokal dibuang saat halaman ditutup)</td>
+                                    <td>
+                                        <div class="d-flex flex-column gap-2 align-items-center">
+                                            <img src="../images/prak6_scen6.png" alt="Skenario 6 - Bagian 1" class="img-fluid rounded" style="max-width: 120px;">
+                                            <img src="../images/prak6_scen6-2.png" alt="Skenario 6 - Bagian 2" class="img-fluid rounded" style="max-width: 120px;">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                   
+
+                    <!-- 4. PERTANYAAN ANALISIS -->
+                    <h3 class="report-heading">4. Pertanyaan Analisis</h3>
+                    <ul class="report-list">
+                        <li>
+                            <strong>a. Jawaban tiga pertanyaan pada Langkah B.2:</strong><br>
+                            Telah dijabarkan pada poin pengamatan Bagian B di atas, di mana state lokal terisolasi di dalam masing-masing tile dan tidak dapat dibagikan antarhalaman.
+                        </li>
+                        <li>
+                            <strong>b. Mengapa jumlah porsi tetap menggunakan setState() dan tidak dimasukkan ke Provider?</strong><br>
+                            Jumlah porsi bersifat sementara dan hanya dibutuhkan secara lokal oleh halaman detail resep tersebut. Berdasarkan hasil pengujian skenario 6, ketika halaman detail ditutup, state lokal dibuang dan di-reset ke nilai awal, sehingga tidak memerlukan state global Provider.
+                        </li>
+                        <li>
+                            <strong>c. Pemindahan ChangeNotifierProvider ke dalam HomePage:</strong><br>
+                            Jika <code>ChangeNotifierProvider</code> dipindahkan ke dalam <code>HomePage</code> (membungkus Scaffold), halaman Favorit yang dibuka melalui Navigator akan mengalami error <code>ProviderNotFoundException</code> karena posisinya berada di luar cakupan sub-tree <i>widget tree</i> provider tersebut.
+                        </li>
+                    </ul>
+
+                    <!-- 5. LATIHAN 1 & 2 -->
+                    <h3 class="report-heading">5. Latihan </h3>
+                    
+                    <h4 class="report-subtitle">Latihan 1: Tema Gelap dan Terang</h4>
+                    <p class="report-paragraph">
+                        Implementasi <code>ThemeProvider</code> berbasis <code>ChangeNotifier</code> serta pengaturan <code>SwitchListTile</code> pada halaman Pengaturan untuk mengubah tema aplikasi secara global.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul6_theme.png" alt="Kode ThemeProvider" class="carbon-img">
+                        <p class="text-muted fst-italic small">Potongan Kode 2. ThemeProvider untuk mode gelap dan terang</p>
+                    </div>
+
+                    <div class="text-center">
+                        <img src="../images/carbon_modul6_theme2.png" alt="Kode ThemeProvider" class="carbon-img">
+                        <p class="text-muted fst-italic small">Potongan Kode 3. SettingPage untuk mode gelap dan terang</p>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <img src="../images/prak6_latihan1.png" alt="Screenshot Latihan 1 Tema Gelap" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Tampilan Latihan 1 (Mode Gelap)</p>
+                    </div>
+
+                    <h4 class="report-subtitle mt-4">Latihan 2: Menghapus Semua Favorit dengan Konfirmasi</h4>
+                    <p class="report-paragraph">
+                        Penambahan tombol "Hapus semua" pada AppBar halaman Favorit yang dilengkapi konfirmasi <code>AlertDialog</code> sebelum membersihkan data resep favorit.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul6_clear.png" alt="Kode clear dialog" class="carbon-img">
+                        <p class="text-muted fst-italic small">Potongan Kode 3. Fungsi AlertDialog dan method clear pada provider</p>
+                    </div>
+                    <div class="text-center mt-3">
+                        <img src="../images/prak6_latihan2.png" alt="Screenshot Latihan 2 Dialog Konfirmasi" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Tampilan Latihan 2 (Dialog Konfirmasi Hapus Semua)</p>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <img src="../images/prak6_latihan2-2.png" alt="Screenshot Latihan 2 " class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Tampilan Latihan 2 (Tombol Hapus Semua Tidak Aktif)</p>
+                    </div>
+
+                    <!-- C. KESIMPULAN -->
+                    <h3 class="report-heading">C. Kesimpulan</h3>
+                    <p class="report-paragraph">
+                        Praktikum Modul VI berhasil diselesaikan dengan baik. Penggunaan state lokal <code>setState()</code> terbukti optimal untuk data yang bersifat sementara dan hanya digunakan pada satu widget (seperti pengaturan jumlah porsi), sedangkan state global menggunakan package <code>provider</code> sangat efektif untuk mengelola data bersama yang diakses oleh banyak halaman sekaligus (seperti resep favorit, badge, dan halaman Favorit). Pemahaman ini memberikan fondasi yang kuat dalam merancang arsitektur aplikasi mobile yang reaktif, interaktif, dan terstruktur.
+                    </p>
+                </div>
+
+                <div class="d-flex justify-content-center gap-3 github-btn-box flex-wrap">
+                    <a href="https://github.com/mandaw34/dvmanda-AplikasiMobile/tree/praktikum-6" target="_blank" rel="noopener noreferrer" class="btn btn-gold medieval-btn">
+                        <i class="fab fa-github"></i> VIEW GITHUB
+                    </a>
+                </div>
+
+                <!-- TOMBOL NAVIGASI -->
+                <div class="back-btn">
+                    <a href="../report.html" class="btn btn-gold medieval-btn">
+                        <i class="fas fa-arrow-left"></i> Back to Reports
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="custom-footer mt-5 pt-4 pb-2">
+        <div class="container text-center py-2">
+            <p class="mb-0 gold-light-text">&copy; 2026 dvnmanda — All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
