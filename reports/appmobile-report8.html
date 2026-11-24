@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dvnmanda – Report Detail Modul 8</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <style>
+        .report-detail-hero {
+            padding-top: 130px;
+            padding-bottom: 70px;
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon-light) 45%, #2a1b1b 100%);
+            border-bottom: 3px solid var(--gold);
+        }
+        .report-content-section {
+            padding-top: 70px;
+            padding-bottom: 100px;
+        }
+        .report-wrapper {
+            background-color: #fdfbf7;
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        }
+        .module-card-section {
+            background-color: #ffffff;
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .module-card-title {
+            color: #5c1d1d;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+        }
+        .report-heading {
+            color: #5c1d1d;
+            font-weight: 700;
+            margin-top: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--gold);
+            padding-left: 15px;
+            font-size: 1.3rem;
+        }
+        .report-paragraph {
+            color: #2b2b2b;
+            line-height: 2;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        .report-list li {
+            color: #2b2b2b;
+            margin-bottom: 12px;
+            line-height: 1.9;
+        }
+        .report-subtitle {
+            color: #5c1d1d;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+        .carbon-img {
+            max-width: 60%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .report-image {
+            max-width: 70%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 12px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .table-custom {
+            border: 1px solid var(--gold);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .table-custom th {
+            background-color: #5c1d1d;
+            color: #fff;
+            font-family: 'Cinzel', serif;
+        }
+        .back-btn {
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .report-wrapper { padding: 30px 20px; }
+            .module-card-section { padding: 20px; }
+            .carbon-img { max-width: 100%; }
+            .report-image { max-width: 100%; }
+        }
+    </style>
+</head>
+<body class="bg-dark-medieval">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand logo-text" href="../index.html">DVNMANDA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../portofolio.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../report.html">Report</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../kontak.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="report-detail-hero text-center">
+        <div class="container">
+            <h1 class="display-4 gold-text fw-bold">Laporan Praktikum</h1>
+            <p class="lead gold-light-text mt-3">Modul 8: HTTP Request dan Integrasi API pada ResepKu</p>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="report-content-section">
+        <div class="container">
+            <div class="report-wrapper">
+
+                <div class="module-card-section">
+                    <h2 class="module-card-title"> Modul VIII: HTTP Request dan Integrasi API pada ResepKu
+                    </h2>
+
+                    <!-- A. PENDAHULUAN -->
+                    <h3 class="report-heading">A. Pendahuluan</h3>
+                    <p class="report-paragraph">
+                        Integrasi REST API merupakan fondasi penting dalam pengembangan aplikasi mobile modern agar data tidak lagi bergantung pada penyimpanan statis di dalam kode sumber (<i>hardcoded</i>). Pada Modul Praktikum VIII ini, aplikasi ResepKu ditransformasikan dari penggunaan 6 data dummy lokal menjadi aplikasi dinamis yang terhubung langsung ke layanan REST API <code>https://dummyjson.com/recipes</code> menggunakan package <code>http</code>. Proses integrasi ini mencakup serialisasi objek Dart melalui konstruktor factory <code>Recipe.fromJson</code>, pemisahan logika jaringan ke dalam class layanan terpusat (<code>RecipeService</code>) yang didaftarkan melalui <code>Provider</code>, pengelolaan state asinkronus menggunakan <code>FutureBuilder</code> lengkap dengan penanganan <i>loading state</i>, <i>error state</i>, serta mekanisme <i>pull-to-refresh</i>, hingga pengiriman data resep baru ke server menggunakan metode HTTP <code>POST</code>.
+                    </p>
+
+                    <!-- B. TUJUAN -->
+                    <h3 class="report-heading">B. Tujuan</h3>
+                    <ul class="report-list">
+                        <li>Membaca struktur respons JSON dari REST API dan membuat factory <code>fromJson</code> untuk model <code>Recipe</code>.</li>
+                        <li>Melakukan request <code>GET</code> dengan package <code>http</code> di dalam sebuah class service (<code>RecipeService</code>).</li>
+                        <li>Menampilkan data dengan <code>FutureBuilder</code> lengkap dengan <i>loading state</i>, <i>error state</i>, tombol coba lagi, dan <i>pull-to-refresh</i>.</li>
+                        <li>Mengirim data baru dengan request <code>POST</code> dari sebuah form, lalu menangani hasilnya.</li>
+                    </ul>
+
+                    <!-- C. PRAKTIKUM -->
+                    <h3 class="report-heading">C. Hasil Praktikum &amp; Dokumentasi</h3>
+
+                    <!-- 1. TABEL LANGKAH A.1 -->
+                    <h4 class="report-subtitle">1. Pengamatan Respons JSON API (Langkah A.1)</h4>
+                    <p class="report-paragraph">
+                        Pengamatan dilakukan dengan mengakses endpoint <code>https://dummyjson.com/recipes?limit=50</code> melalui browser untuk memetakan struktur objek JSON terluar dan tipe data setiap atribut resep sebelum diimplementasikan ke dalam <code>Recipe.fromJson</code>.
+                    </p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-custom text-center align-middle">
+                            <thead>
+                                <tr>
+                                    <th style="width: 45%;">Pertanyaan Pengamatan</th>
+                                    <th>Jawaban</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-start ps-4">Nilai <code>total</code></td>
+                                    <td><code>50</code></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start ps-4">Key yang berisi daftar resep</td>
+                                    <td><code>recipes</code></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start ps-4">Tipe nilai <code>rating</code> pada resep pertama (<code>int</code> atau <code>double</code>?)</td>
+                                    <td><code>double</code> (bernilai <code>4.6</code> pada resep pertama, namun pada beberapa resep lain bernilai bulat seperti <code>5</code> sehingga di-parsing menggunakan <code>num.toDouble()</code>)</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start ps-4">Tiga key resep yang belum ada di model <code>Recipe</code> Modul 7</td>
+                                    <td><code>instructions</code>, <code>tags</code>, <code>userId</code> (serta <code>reviewCount</code> dan <code>mealType</code>)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 2. CHECKPOINT 1 -->
+                    <h4 class="report-subtitle mt-4">2. Checkpoint 1: Menampilkan Data Server &amp; Langkah Memasak (Bagian B)</h4>
+                    <p class="report-paragraph">
+                        Setelah <code>RecipeService</code> dibuat dan dihubungkan ke <code>HomePage</code> menggunakan <code>FutureBuilder</code>, aplikasi menampilkan indikator <i>loading</i> sesaat sebelum merender 50 resep dari server. Pada halaman detail versi <code>CustomScrollView</code> dan <code>SliverAppBar</code>, bagian <strong>Langkah</strong> memasak ditambahkan menggunakan <code>SliverToBoxAdapter</code> dan <code>SliverList.builder</code>.
+                    </p>
+
+                    <div class="text-center mt-3">
+                        <img src="../images/prak8_cp1_loading.png" alt="Checkpoint 1 Indikator Loading" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Checkpoint 1a: Indikator loading (CircularProgressIndicator) saat proses fetch data dari server berlangsung</p>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <img src="../images/prak8_cp1_home.png" alt="Checkpoint 1 Home 50 Resep Server" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Checkpoint 1b: Halaman Home menampilkan daftar resep baru dari server dummyjson.com beserta footer identitas</p>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <img src="../images/prak8_cp1_detail.png" alt="Checkpoint 1 Halaman Detail Langkah Memasak" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Checkpoint 1c: Halaman Detail (SliverAppBar) menampilkan daftar langkah memasak beserta footer identitas</p>
+                    </div>
+
+                    <!-- 3. CHECKPOINT 2 -->
+                    <h4 class="report-subtitle mt-4">3. Checkpoint 2: Penanganan Error State &amp; Pull-to-Refresh (Langkah B.6)</h4>
+                    <p class="report-paragraph">
+                        Pengujian ketahanan jaringan dilakukan dengan memutus koneksi ke endpoint API untuk memverifikasi munculnya widget <code>ErrorView</code> beserta tombol <em>"Coba lagi"</em>, dilanjutkan dengan pengujian <code>RefreshIndicator</code> untuk memuat ulang data tanpa menghilangkan daftar resep yang sedang tampil.
+                    </p>
+
+                    <div class="text-center mt-3">
+                        <img src="../images/prak8_cp2_error.png" alt="Checkpoint 2 ErrorView Mode Offline" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Checkpoint 2a: Tampilan ErrorView dan tombol "Coba lagi" saat koneksi ke server terputus</p>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <img src="../images/prak8_cp2_refresh.png" alt="Checkpoint 2 Pull to Refresh" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Checkpoint 2b: Animasi pull-to-refresh berjalan di bagian atas daftar resep</p>
+                    </div>
+
+                    <!-- 4. CHECKPOINT 3 -->
+                    <h4 class="report-subtitle mt-4">4. Checkpoint 3: Mengirim Resep Baru via HTTP POST (Bagian C)</h4>
+                    <p class="report-paragraph">
+                        Halaman form <code>AddRecipePage</code> dihubungkan melalui tombol <code>FloatingActionButton</code> pada halaman utama. Form dilengkapi validasi input sebelum mengirimkan body JSON ke endpoint <code>POST /recipes/add</code>, yang kemudian merespons dengan mengembalikan ID baru pada <code>SnackBar</code>.
+                    </p>
+
+                    <div class="text-center mt-3">
+                        <img src="../images/prak8_cp3_validasi.png" alt="Checkpoint 3 Validasi Form Kosong" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Checkpoint 3a: Validasi form menampilkan pesan "Wajib diisi" saat tombol Simpan ditekan dalam keadaan kosong</p>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <img src="../images/prak8_cp3_snackbar.png" alt="Checkpoint 3 SnackBar ID Server" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Checkpoint 3b: SnackBar menampilkan konfirmasi resep "Rendang" diterima server beserta ID baru</p>
+                    </div>
+
+                    <!-- 5. TABEL UJI LANGKAH D.1 -->
+                    <h4 class="report-subtitle mt-4">5. Tabel Pengujian Aplikasi (Langkah D.1)</h4>
+                    <p class="report-paragraph">
+                        Berikut adalah hasil verifikasi menyeluruh terhadap ketujuh skenario fungsionalitas aplikasi ResepKu setelah terintegrasi penuh dengan REST API:
+                    </p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-custom text-center align-middle">
+                            <thead>
+                                <tr>
+                                    <th style="width: 8%;">No</th>
+                                    <th style="width: 44%;">Skenario Pengujian</th>
+                                    <th style="width: 48%;">Hasil yang Didapat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="text-start">Buka aplikasi</td>
+                                    <td class="text-start"><strong>Sesuai (&#10004;)</strong> — Indikator loading tampil sesaat, kemudian 50 resep dari server berhasil dimuat (dibuktikan pada Checkpoint 1a &amp; 1b).</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="text-start">Tandai dua resep sebagai favorit, lalu tarik untuk refresh</td>
+                                    <td class="text-start"><strong>Sesuai (&#10004;)</strong> — Status favorit kedua resep tetap terjaga dengan ikon hati berwarna merah dan badge tetap menunjukkan angka 2.</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td class="text-start">Tekan tombol grid, lalu kembali ke list</td>
+                                    <td class="text-start"><strong>Sesuai (&#10004;)</strong> — Perubahan tata letak berjalan mulus tanpa memicu indikator loading baru maupun request ulang ke server.</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td class="text-start">Buka detail salah satu resep</td>
+                                    <td class="text-start"><strong>Sesuai (&#10004;)</strong> — Halaman detail menampilkan foto, informasi porsi, daftar bahan, serta langkah memasak secara lengkap (dibuktikan pada Checkpoint 1c).</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td class="text-start">Mode pesawat (koneksi terputus), lalu hot restart</td>
+                                    <td class="text-start"><strong>Sesuai (&#10004;)</strong> — Aplikasi menangkap error jaringan dan menampilkan widget <code>ErrorView</code> lengkap dengan tombol "Coba lagi" (dibuktikan pada Checkpoint 2a).</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td class="text-start">Matikan mode pesawat, tekan "Coba lagi"</td>
+                                    <td class="text-start"><strong>Sesuai (&#10004;)</strong> — Koneksi pulih dan seluruh daftar 50 resep berhasil dimuat ulang ke layar utama.</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td class="text-start">Kirim resep baru melalui tombol +</td>
+                                    <td class="text-start"><strong>Sesuai (&#10004;)</strong> — Form tertutup setelah data dikirim dan muncul <code>SnackBar</code> konfirmasi berisi ID baru dari server (dibuktikan pada Checkpoint 3b).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 6. PERTANYAAN ANALISIS -->
+                    <h4 class="report-subtitle mt-4">6. Pertanyaan Analisis (Bagian D)</h4>
+                    <ul class="report-list">
+                        <li>
+                            <strong>1. Pada skenario 2, setiap refresh membuat objek Recipe yang baru dari JSON. Mengapa status favorit tetap benar?</strong><br>
+                            Status favorit tetap dipertahankan secara akurat karena <code>FavoriteProvider</code> memeriksa kesamaan item berdasarkan nilai properti unik <code>id</code> melalui ekspresi <code>_items.any((r) =&gt; r.id == recipe.id)</code>, bukan berdasarkan kesamaan referensi instans objek di dalam memori. Meskipun proses <i>refresh</i> menghasilkan instans objek <code>Recipe</code> baru hasil dekode JSON, ID resep tersebut tetap identik dengan data yang tersimpan di dalam daftar favorit.
+                        </li>
+                        <li>
+                            <strong>2. Pada skenario 3, mengapa menekan tombol grid tidak memunculkan indikator loading? Apa yang akan terjadi jika future ditulis langsung di dalam <code>build()</code>?</strong><br>
+                            Penekanan tombol perubahan tampilan <i>grid/list</i> tidak memunculkan indikator loading karena objek <code>_recipesFuture</code> diinisialisasi satu kali di dalam method <code>initState()</code>. Jika pemanggilan <code>fetchRecipes()</code> ditulis langsung di dalam method <code>build()</code>, setiap kali <code>setState()</code> dipanggil saat tombol ditekan, Flutter akan membuat ulang objek <code>Future</code> baru dan mengirim request HTTP berulang kali ke server sehingga indikator loading terus muncul setiap kali tampilan diganti.
+                        </li>
+                        <li>
+                            <strong>3. <code>HomePage</code> tidak memanggil <code>http.get</code> secara langsung, melainkan melalui <code>RecipeService</code>. Sebutkan dua keuntungan cara ini.</strong><br>
+                            Pertama, menerapkan prinsip pemisahan tanggung jawab (<i>separation of concerns</i>) di mana logika komunikasi jaringan, endpoint URL, timeout, dan konversi JSON terpusat di lapisan service sehingga kode antarmuka (UI) tetap bersih. Kedua, mempermudah pengujian unit (<i>unit testing</i>) karena dependensi <code>http.Client</code> dapat disuntikkan dan diganti dengan <code>MockClient</code> tanpa memerlukan koneksi internet nyata.
+                        </li>
+                        <li>
+                            <strong>4. Setelah POST berhasil, server memberi id baru, tetapi resep tidak muncul saat daftar dimuat ulang. Jelaskan penyebabnya, dan bagaimana aplikasi dengan server sungguhan biasanya menampilkan data yang baru ditambahkan.</strong><br>
+                            Penyebabnya adalah endpoint <code>dummyjson.com/recipes/add</code> bersifat simulasi publik yang mengembalikan respons sukses beserta ID baru tanpa benar-benar menyimpan entri tersebut ke dalam basis data permanen server. Pada aplikasi produksi dengan server sungguhan, data yang baru ditambahkan umumnya langsung dimasukkan ke dalam state lokal aplikasi (misalnya di-<i>insert</i> ke awal list) menggunakan objek kembalian dari respons POST agar langsung terlihat oleh pengguna tanpa harus melakukan fetch ulang seluruh daftar.
+                        </li>
+                        <li>
+                            <strong>5. Di <code>AddRecipePage</code> terdapat <code>if (!mounted) return;</code> setelah <code>await</code>. Jelaskan skenario yang dicegah oleh baris tersebut.</strong><br>
+                            Baris pemeriksaan tersebut mencegah terjadinya error <i>runtime</i> (mengakses <code>BuildContext</code> pada widget yang sudah tidak aktif) ketika pengguna menekan tombol kembali untuk menutup halaman form saat proses request <code>await service.addRecipe(...)</code> masih berjalan di latar belakang. Jika widget sudah dihapus dari <i>widget tree</i> (<code>mounted == false</code>), eksekusi fungsi dihentikan sebelum memanggil <code>Navigator.pop</code> atau <code>setState</code>.
+                        </li>
+                    </ul>
+
+                    <!-- 7. LATIHAN -->
+                    <h4 class="report-subtitle mt-4">7. Latihan</h4>
+
+                    <!-- Latihan 1 -->
+                    <h5 class="report-subtitle" style="font-size: 1.05rem;">Latihan 1: Pencarian Resep (GET /recipes/search)</h5>
+                    <p class="report-paragraph">
+                        Penambahan method <code>searchRecipes(String query)</code> pada <code>RecipeService</code> serta pembuatan halaman <code>SearchPage</code> yang dibuka melalui ikon kaca pembesar di AppBar <code>HomePage</code>. Pencarian dieksekusi saat pengguna menekan tombol <em>Enter</em> (<code>onSubmitted</code>) menggunakan <code>FutureBuilder</code> dengan penanganan status loading, error, dan hasil kosong.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul8_lat1_service.png" alt="Kode searchRecipes di RecipeService" class="carbon-img">
+                        <p class="text-muted fst-italic small">Potongan Kode 1. Method searchRecipes pada recipe_service.dart</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul8_lat1_page.png" alt="Kode SearchPage" class="carbon-img">
+                        <p class="text-muted fst-italic small">Potongan Kode 2. Implementasi SearchPage dengan TextField dan FutureBuilder</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul8_lat1_button.png" alt="Kode IconButton Search di HomePage" class="carbon-img">
+                        <p class="text-muted fst-italic small">Potongan Kode 3. Penambahan IconButton search di AppBar HomePage</p>
+                    </div>
+                    <div class="text-center mt-3">
+                        <img src="../images/prak8_lat1_hasil.png" alt="Hasil Testing Pencarian Resep" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Tampilan Latihan 1a: Hasil pencarian resep berdasarkan kata kunci yang dimasukkan</p>
+                    </div>
+                    <div class="text-center mt-3">
+                        <img src="../images/prak8_lat1_kosong.png" alt="Hasil Testing Pencarian Kosong" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Tampilan Latihan 1b: Pesan penanganan saat kata kunci pencarian tidak ditemukan</p>
+                    </div>
+
+                    <!-- Latihan 2 -->
+                    <h5 class="report-subtitle mt-4" style="font-size: 1.05rem;">Latihan 2: Mengubah dan Menghapus Resep (PUT &amp; DELETE)</h5>
+                    <p class="report-paragraph">
+                        Penambahan method <code>updateRecipe</code> (<code>PUT /recipes/{id}</code>) dan <code>deleteRecipe</code> (<code>DELETE /recipes/{id}</code>) pada <code>RecipeService</code>, serta menu titik tiga (<code>PopupMenuButton</code>) pada <code>SliverAppBar</code> di halaman detail untuk memicu <code>AlertDialog</code> ubah nama dan dialog konfirmasi hapus resep.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul8_lat2_service.png" alt="Kode updateRecipe dan deleteRecipe" class="carbon-img">
+                        <p class="text-muted fst-italic small">Potongan Kode 3. Method updateRecipe dan deleteRecipe pada recipe_service.dart</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul8_lat2_detail.png" alt="Kode PopupMenuButton dan Dialog di DetailPage" class="carbon-img">
+                        <p class="text-muted fst-italic small">Potongan Kode 4. Implementasi PopupMenuButton dan AlertDialog pada detail_page.dart</p>
+                    </div>
+                    <!-- Tampilan Latihan 2a: Ubah Nama (Dialog & SnackBar berdampingan) -->
+                    <div class="mt-4">
+                        <p class="fw-bold text-dark text-center mb-3">Tampilan Latihan 2a: Proses Ubah Nama Resep (PUT)</p>
+                        <div class="row align-items-center">
+                            <div class="col-md-6 text-center mb-3">
+                                <img src="../images/prak8_lat2_ubah_dialog.png" alt="Dialog Ubah Nama Resep" class="img-fluid rounded border border-warning shadow-sm" style="max-height: 350px;">
+                                <p class="text-muted fst-italic small mt-2">1. Dialog AlertDialog ubah nama</p>
+                            </div>
+                            <div class="col-md-6 text-center mb-3">
+                                <img src="../images/prak8_lat2_ubah_snackbar.png" alt="SnackBar Berhasil Diubah" class="img-fluid rounded border border-warning shadow-sm" style="max-height: 350px;">
+                                <p class="text-muted fst-italic small mt-2">2. SnackBar notifikasi sukses PUT</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tampilan Latihan 2b: Hapus Resep (Dialog & SnackBar berdampingan) -->
+                    <div class="mt-4">
+                        <p class="fw-bold text-dark text-center mb-3">Tampilan Latihan 2b: Proses Hapus Resep (DELETE)</p>
+                        <div class="row align-items-center">
+                            <div class="col-md-6 text-center mb-3">
+                                <img src="../images/prak8_lat2_hapus_dialog.png" alt="Dialog Konfirmasi Hapus" class="img-fluid rounded border border-warning shadow-sm" style="max-height: 350px;">
+                                <p class="text-muted fst-italic small mt-2">1. Dialog konfirmasi hapus resep</p>
+                            </div>
+                            <div class="col-md-6 text-center mb-3">
+                                <img src="../images/prak8_lat2_hapus_snackbar.png" alt="SnackBar Berhasil Dihapus" class="img-fluid rounded border border-warning shadow-sm" style="max-height: 350px;">
+                                <p class="text-muted fst-italic small mt-2">2. SnackBar notifikasi sukses DELETE</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- D. KESIMPULAN -->
+                    <h3 class="report-heading">D. Kesimpulan</h3>
+                    <p class="report-paragraph">
+                        Praktikum Modul VIII berhasil dilaksanakan dengan mengintegrasikan aplikasi ResepKu ke REST API publik <code>dummyjson.com</code>. Pemisahan lapisan komunikasi jaringan ke dalam class <code>RecipeService</code> yang dikombinasikan dengan <code>FutureBuilder</code> memungkinkan aplikasi mengelola siklus hidup pengambilan data asinkronus (<i>loading</i>, <i>success</i>, dan <i>error state</i>) secara terstruktur serta mendukung interaksi pengguna melalui <i>pull-to-refresh</i>, pencarian data (<code>GET</code> search), hingga manipulasi data menggunakan metode HTTP <code>POST</code>, <code>PUT</code>, dan <code>DELETE</code>. Penerapan pengecekan siklus hidup widget (<code>mounted</code>) dan inisialisasi <code>Future</code> di dalam <code>initState()</code> terbukti krusial dalam menjaga stabilitas dan efisiensi performa aplikasi mobile berbasis Flutter.
+                    </p>
+                </div>
+
+                <div class="d-flex justify-content-center gap-3 github-btn-box flex-wrap">
+                    <a href="https://github.com/mandaw34/dvmanda-AplikasiMobile/tree/praktikum-8" target="_blank" rel="noopener noreferrer" class="btn btn-gold medieval-btn">
+                        <i class="fab fa-github"></i> VIEW GITHUB
+                    </a>
+                </div>
+
+                <!-- TOMBOL NAVIGASI -->
+                <div class="back-btn">
+                    <a href="../report.html" class="btn btn-gold medieval-btn">
+                        <i class="fas fa-arrow-left"></i> Back to Reports
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="custom-footer mt-5 pt-4 pb-2">
+        <div class="container text-center py-2">
+            <p class="mb-0 gold-light-text">&copy; 2026 dvnmanda — All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

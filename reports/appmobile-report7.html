@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dvnmanda – Report Detail Modul 7</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <style>
+        .report-detail-hero {
+            padding-top: 130px;
+            padding-bottom: 70px;
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon-light) 45%, #2a1b1b 100%);
+            border-bottom: 3px solid var(--gold);
+        }
+        .report-content-section {
+            padding-top: 70px;
+            padding-bottom: 100px;
+        }
+        .report-wrapper {
+            background-color: #fdfbf7;
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        }
+        .module-card-section {
+            background-color: #ffffff;
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .module-card-title {
+            color: #5c1d1d;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+        }
+        .report-heading {
+            color: #5c1d1d;
+            font-weight: 700;
+            margin-top: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--gold);
+            padding-left: 15px;
+            font-size: 1.3rem;
+        }
+        .report-paragraph {
+            color: #2b2b2b;
+            line-height: 2;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        .report-list li {
+            color: #2b2b2b;
+            margin-bottom: 12px;
+            line-height: 1.9;
+        }
+        .report-subtitle {
+            color: #5c1d1d;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+        .carbon-img {
+            max-width: 60%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .report-image {
+            max-width: 70%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 12px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .table-custom {
+            border: 1px solid var(--gold);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .table-custom th {
+            background-color: #5c1d1d;
+            color: #fff;
+            font-family: 'Cinzel', serif;
+        }
+        .back-btn {
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .report-wrapper { padding: 30px 20px; }
+            .module-card-section { padding: 20px; }
+            .carbon-img { max-width: 100%; }
+            .report-image { max-width: 100%; }
+        }
+    </style>
+</head>
+<body class="bg-dark-medieval">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand logo-text" href="../index.html">DVNMANDA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../portofolio.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../report.html">Report</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../kontak.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="report-detail-hero text-center">
+        <div class="container">
+            <h1 class="display-4 gold-text fw-bold">Laporan Praktikum</h1>
+            <p class="lead gold-light-text mt-3">Modul 7: Navigasi Lanjutan, State Management, dan Multimedia pada ResepKu</p>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="report-content-section">
+        <div class="container">
+            <div class="report-wrapper">
+
+                <div class="module-card-section">
+                    <h2 class="module-card-title"> Modul VII: Navigasi Lanjutan, State Management, dan Multimedia pada ResepKu</h2>
+
+                    <!-- A. PENDAHULUAN -->
+                    <h3 class="report-heading">A. Pendahuluan</h3>
+                    <p class="report-paragraph">
+                        Pengembangan antarmuka aplikasi seluler yang interaktif dan kaya fitur memerlukan pengelolaan navigasi tingkat lanjut, manajemen status aplikasi (<i>state management</i>) yang reaktif menggunakan <code>Provider</code>, serta integrasi komponen multimedia seperti penanganan gambar jaringan dengan <i>placeholder</i> dan *error state*. Pada Modul Praktikum VII ini, aplikasi ResepKu dikembangkan lebih jauh dengan menerapkan perpindahan halaman, pengelolaan status tombol favorit lintas halaman secara global, serta pengoptimalan tata letak penayangan data resep dalam mode daftar (<i>list</i>) maupun grid interaktif.
+                    </p>
+
+                    <!-- B. TUJUAN -->
+                    <h3 class="report-heading">B. Tujuan</h3>
+                    <ul class="report-list">
+                        <li>Memahami dan menerapkan navigasi antarhalaman serta pengiriman data objek resep secara efektif di Flutter.</li>
+                        <li>Menggunakan package <code>Provider</code> untuk mengelola status favorit secara global di dalam aplikasi.</li>
+                        <li>Mengimplementasikan pemuatan gambar multimedia dengan penanganan status gagal muat (<i>error state</i>) menggunakan widget *placeholder*.</li>
+                        <li>Melakukan pengujian fungsionalitas antarmuka serta kustomisasi fitur tambahan melalui latihan praktikum.</li>
+                    </ul>
+
+                    <!-- C. PRAKTIKUM -->
+                    <h3 class="report-heading">C. Hasil Praktikum &amp; Dokumentasi</h3>
+
+                    <!-- 1. CHECKPOINT 1 -->
+                    <h4 class="report-subtitle">1. Checkpoint 1: Penerapan Font Poppins &amp; Identitas Footer</h4>
+                    <p class="report-paragraph">
+                        Pengujian awal dilakukan untuk memastikan seluruh teks pada antarmuka aplikasi ResepKu telah menerapkan tipografi font Poppins secara konsisten, serta menyertakan footer identitas (Nama dan NIM) pada setiap halaman tampilan utama.
+                    </p>
+                    <div class="text-center mt-3">
+                        <img src="../images/prak7_cp1_home.png" alt="Checkpoint 1 Tampilan Home Font Poppins" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Checkpoint 1: Halaman Home ResepKu dengan tipografi Poppins dan footer identitas</p>
+                    </div>
+
+                    <!-- 2. CHECKPOINT 2 -->
+                    <h4 class="report-subtitle mt-4">2. Checkpoint 2: Penanganan Error State Gambar (Placeholder)</h4>
+                    <p class="report-paragraph">
+                        Pengujian ketahanan media dilakukan dengan mensimulasikan kegagalan jaringan atau URL gambar yang tidak valid guna memastikan widget gambar otomatis beralih menampilkan gambar cadangan (placeholder) tanpa menyebabkan aplikasi mengalami crash.
+                    </p>
+                    <div class="text-center mt-3">
+                        <img src="../images/prak7_cp2_placeholder.png" alt="Checkpoint 2 Placeholder Gambar" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Checkpoint 2: Gambar pengganti (placeholder) tampil mulus saat koneksi gagal atau URL tidak valid</p>
+                    </div>
+
+                    <!-- 3. CHECKPOINT 3 -->
+                    <h4 class="report-subtitle mt-4">3. Checkpoint 3: Tampilan Grid &amp; Halaman Detail Resep</h4>
+                    <p class="report-paragraph">
+                        Verifikasi tata letak responsif melalui tombol pengalih tampilan ke mode grid dua kolom, serta navigasi menuju halaman detail resep yang menampilkan foto ukuran besar beserta rincian informasi dan tombol interaksi favorit.
+                    </p>
+                    <div class="text-center mt-3">
+                        <img src="../images/prak7_cp3_grid.png" alt="Checkpoint 3 Tampilan Grid" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Checkpoint 3a: Tampilan daftar resep dalam mode grid interaktif dua kolom</p>
+                    </div>
+                    <div class="text-center mt-3">
+                        <img src="../images/prak7_cp3_detail.png" alt="Checkpoint 3 Halaman Detail" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Checkpoint 3b: Halaman Detail resep dengan foto besar dan tombol aksi favorit</p>
+                    </div>
+
+                    <!-- 4. PERHITUNGAN LANGKAH C.3 -->
+                    <h4 class="report-subtitle mt-4">4. Perhitungan Dimensi Kartu Grid (Langkah C.3)</h4>
+                    <p class="report-paragraph">
+                        Berdasarkan konfigurasi <code>SliverGridDelegateWithFixedCrossAxisCount</code> pada <code>HomePage</code> dengan lebar layar perangkat <strong>360 dp</strong>, padding horizontal <code>8 dp</code> pada masing-masing sisi, jarak antar kolom (<code>crossAxisSpacing</code>) sebesar <code>8 dp</code>, jumlah kolom (<code>crossAxisCount</code>) sebanyak <strong>2</strong>, serta rasio aspek (<code>childAspectRatio</code>) sebesar <strong>3 / 4 (0,75)</strong>, berikut adalah rincian perhitungan ukuran setiap kartu grid:
+                    </p>
+                    <ul class="report-list">
+                        <li>
+                            <strong>Lebar Bersih Area Grid:</strong><br>
+                            <code>360 dp - (8 dp &times; 2) = 344 dp</code>
+                        </li>
+                        <li>
+                            <strong>Lebar Satu Kartu Grid:</strong><br>
+                            <code>(344 dp - 8 dp) / 2 = 336 dp / 2 = 168 dp</code>
+                        </li>
+                        <li>
+                            <strong>Tinggi Satu Kartu Grid (berdasarkan rasio 3 : 4):</strong><br>
+                            <code>Lebar Kartu / childAspectRatio = 168 dp / (3 / 4) = 168 dp &times; (4 / 3) = 224 dp</code>
+                        </li>
+                    </ul>
+                    <p class="report-paragraph">
+                        Dengan demikian, setiap kartu pada tampilan grid memiliki ukuran lebar <strong>168 dp</strong> dan tinggi <strong>224 dp</strong>.
+                    </p>
+
+                    <!-- 5. TABEL UJI LANGKAH D.2 -->
+                    <h4 class="report-subtitle mt-4">5. Tabel Pengujian Aplikasi (Langkah D.2)</h4>
+                    <p class="report-paragraph">
+                        Berikut adalah tabel hasil pengujian fungsionalitas aplikasi ResepKu yang telah divalidasi sesuai dengan seluruh skenario praktikum Modul 7:
+                    </p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-custom text-center align-middle">
+                            <thead>
+                                <tr>
+                                    <th style="width: 8%;">No</th>
+                                    <th style="width: 44%;">Skenario Pengujian</th>
+                                    <th style="width: 48%;">Hasil yang Didapat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="text-start">Buka aplikasi</td>
+                                    <td class="text-start"><strong>Sesuai (&#10004;)</strong> — Logo di AppBar tampil dengan benar, font Poppins terapkan secara global, dan thumbnail foto resep termuat sempurna.</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="text-start">Tekan tombol grid di AppBar</td>
+                                    <td class="text-start"><strong>Sesuai (&#10004;)</strong> — Tampilan daftar resep beralih menjadi kartu dua kolom berbentuk grid; ikon di AppBar berubah menjadi ikon <i>list</i>.</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td class="text-start">Di mode grid, tap ikon hati pada salah satu resep</td>
+                                    <td class="text-start"><strong>Sesuai (&#10004;)</strong> — Ikon hati berubah menjadi warna merah dan angka badge indikator favorit di bagian atas bertambah.</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td class="text-start">Kembali ke mode list</td>
+                                    <td class="text-start"><strong>Sesuai (&#10004;)</strong> — Status favorit resep yang dipilih tetap tersimpan dengan benar dan ikon hati tetap berwarna merah.</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td class="text-start">Tap kartu resep di mode grid</td>
+                                    <td class="text-start"><strong>Sesuai (&#10004;)</strong> — Halaman detail resep terbuka dengan mulus, menampilkan foto resep ukuran besar di bagian atas beserta rincian lengkapnya.</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td class="text-start">Uji mode offline / error state</td>
+                                    <td class="text-start"><strong>Sesuai (&#10004;)</strong> — Gambar placeholder dari asset lokal otomatis tampil menggantikan foto jaringan yang gagal dimuat tanpa error merah.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 6. LATIHAN -->
+                    <h4 class="report-subtitle mt-4">6. Latihan</h4>
+
+                    <!-- Latihan 1 -->
+                    <h5 class="report-subtitle" style="font-size: 1.05rem;">Latihan 1: Filter Cuisine (Penyaring Jenis Masakan)</h5>
+                    <p class="report-paragraph">
+                        Penambahan baris komponen <code>ChoiceChip</code> horizontal di bawah AppBar pada halaman utama (<code>HomePage</code>). Fitur ini memungkinkan pengguna menyaring daftar resep secara instan berdasarkan kategori kuliner (seperti Italian, Asian, Mexican, dll.) baik ketika aplikasi berjalan dalam mode list maupun grid.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul7_lat1.png" alt="Potongan Kode Latihan 1 Filter Cuisine" class="carbon-img">
+                        <p class="text-muted fst-italic small">Potongan Kode 1. Logika filter dan implementasi ChoiceChip pada home_page.dart</p>
+                    </div>
+                    <div class="text-center mt-3">
+                        <img src="../images/prak7_lat1_hasil.png" alt="Hasil Testing Latihan 1 Filter Cuisine" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Tampilan Latihan 1: Filter resep berdasarkan kategori cuisine menggunakan ChoiceChip horizontal</p>
+                    </div>
+                    <div class="text-center mt-3">
+                        <img src="../images/prak7_lat1-2_hasil.png" alt="Hasil Testing Latihan 1 Filter Cuisine" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Tampilan Latihan 1: Filter resep berdasarkan kategori cuisine menggunakan ChoiceChip pada tampilan grid</p>
+                    </div>
+
+                    <!-- Latihan 2 -->
+                    <h5 class="report-subtitle mt-4" style="font-size: 1.05rem;">Latihan 2: Halaman Favorit yang Lebih Rapi (ListView.separated &amp; Dismissible)</h5>
+                    <p class="report-paragraph">
+                        Perombakan struktur halaman Favorit (<code>FavoritePage</code>) menggunakan <code>ListView.separated</code> yang dilengkapi garis pembatas (<code>Divider</code>) antar item, thumbnail foto resep menggunakan widget <code>RecipeImage</code>, serta penambahan fitur interaktif <code>Dismissible</code> agar resep dapat dihapus dari daftar favorit dengan cara digeser (swipe) ke arah kiri disertai kemunculan <code>SnackBar</code> konfirmasi.
+                    </p>
+                    <div class="text-center">
+                        <img src="../images/carbon_modul7_lat2.png" alt="Potongan Kode Latihan 2 Dismissible" class="carbon-img">
+                        <p class="text-muted fst-italic small">Potongan Kode 2. Implementasi ListView.separated dan Dismissible pada favorite_page.dart</p>
+                    </div>
+                    <div class="text-center mt-3">
+                        <img src="../images/prak7_lat2_hasil.png" alt="Hasil Testing Latihan 2 Halaman Favorit" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Tampilan Latihan 2: Halaman Favorit dengan Divider, thumbnail foto, dan fitur swipe hapus (Dismissible)</p>
+                    </div>
+                    <div class="text-center mt-3">
+                        <img src="../images/prak7_lat2-2_hasil.png" alt="Hasil Testing Latihan 2 Halaman Favorit" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Tampilan Latihan 2: Halaman Favorit dengan fitur swipe hapus (Dismissible)</p>
+                    </div>
+                    <div class="text-center mt-3">
+                        <img src="../images/prak7_lat2-3_hasil.png" alt="Hasil Testing Latihan 2 Halaman Favorit" class="report-image">
+                        <p class="text-muted fst-italic small mt-2">Tampilan Latihan 2: SnackBar berisi nama resep yang dihapus.</p>
+                    </div>
+
+
+                    <!-- D. KESIMPULAN -->
+                    <h3 class="report-heading">D. Kesimpulan</h3>
+                    <p class="report-paragraph">
+                        Praktikum Modul VII berhasil diselesaikan dengan baik. Penerapan navigasi lanjutan, manajemen status global menggunakan Provider, serta penanganan komponen multimedia dan error state berhasil diintegrasikan ke dalam aplikasi ResepKu. Selain itu, pengerjaan latihan tambahan berupa filter kategori kuliner (ChoiceChip) dan perombakan halaman favorit berbasis Dismissible semakin memperkaya pengalaman interaksi pengguna serta memperkuat pemahaman mendalam mengenai pengembangan aplikasi mobile berbasis Flutter.
+                    </p>
+                </div>
+
+                <div class="d-flex justify-content-center gap-3 github-btn-box flex-wrap">
+                    <a href="https://github.com/mandaw34/dvmanda-AplikasiMobile/tree/praktikum-7" target="_blank" rel="noopener noreferrer" class="btn btn-gold medieval-btn">
+                        <i class="fab fa-github"></i> VIEW GITHUB
+                    </a>
+                </div>
+
+                <!-- TOMBOL NAVIGASI -->
+                <div class="back-btn">
+                    <a href="../report.html" class="btn btn-gold medieval-btn">
+                        <i class="fas fa-arrow-left"></i> Back to Reports
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="custom-footer mt-5 pt-4 pb-2">
+        <div class="container text-center py-2">
+            <p class="mb-0 gold-light-text">&copy; 2026 dvnmanda — All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
